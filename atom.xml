@@ -6,7 +6,7 @@
   <link href="/luojinrong.github.io/atom.xml" rel="self"/>
   
   <link href="https://luojinrong.github.io/"/>
-  <updated>2018-10-25T08:03:45.347Z</updated>
+  <updated>2018-10-27T15:00:55.618Z</updated>
   <id>https://luojinrong.github.io/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>最小二乘法</title>
+    <link href="https://luojinrong.github.io/2018/10/27/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/"/>
+    <id>https://luojinrong.github.io/2018/10/27/最小二乘法/</id>
+    <published>2018-10-27T13:21:36.000Z</published>
+    <updated>2018-10-27T15:00:55.618Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://luojinrong.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>markdown+MathJax</title>
     <link href="https://luojinrong.github.io/2018/10/24/markdown-MathJax/"/>
     <id>https://luojinrong.github.io/2018/10/24/markdown-MathJax/</id>
     <published>2018-10-24T14:13:52.000Z</published>
-    <updated>2018-10-25T08:03:45.347Z</updated>
+    <updated>2018-10-27T15:17:39.312Z</updated>
     
     <summary type="html">
     
@@ -47,7 +71,7 @@
     <link href="https://luojinrong.github.io/2018/10/21/markdown%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6/"/>
     <id>https://luojinrong.github.io/2018/10/21/markdown转义字符/</id>
     <published>2018-10-21T13:43:47.000Z</published>
-    <updated>2018-10-25T08:00:55.973Z</updated>
+    <updated>2018-10-27T15:18:46.410Z</updated>
     
     <summary type="html">
     
@@ -73,7 +97,7 @@
     <link href="https://luojinrong.github.io/2018/10/20/Markdown%E5%AD%A6%E4%B9%A0/"/>
     <id>https://luojinrong.github.io/2018/10/20/Markdown学习/</id>
     <published>2018-10-20T06:48:29.000Z</published>
-    <updated>2018-10-21T13:39:30.723Z</updated>
+    <updated>2018-10-27T15:00:29.892Z</updated>
     
     <summary type="html">
     
