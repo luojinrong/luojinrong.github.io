@@ -19,7 +19,7 @@
 <hr>
 <h3 id="极小化"><a href="#极小化" class="headerlink" title="极小化"></a>极小化</h3><p>接下来我们极小化绝对偏差$S$.</p>
 <p>我们对$S$分别求$k,b$的偏导，并使其为零：</p>
-<p>$$<br>\begin{cases}<br>\frac {\partial S}{\partial k}=2\sum_{i=1}^m <a href="-x_i">y_i-(kx_i+b)</a>=0\\<br>\frac {\partial S}{\partial b}=2\sum_{i=1}^m <a href="-1">y_i-(kx_i+b)</a>=0\\<br>\end{cases}<br>$$</p>
+<p>$$<br>\begin{cases}<br>\frac {\partial S}{\partial k}=2\sum_{i=1}^m (y_i-(kx_i+b))(-x_i)=0\\<br>\frac {\partial S}{\partial b}=2\sum_{i=1}^m (y_i-(kx_i+b))(-1)=0\\<br>\end{cases}<br>$$</p>
 <p>整理：</p>
 <p>$$<br>\begin{cases}<br>\sum_{i=1}^m kx_i^2+\sum_{i=1}^m bx_i=\sum_{i=1}^m x_iy_i\\<br>\sum_{i=1}^m kx_i+mb=\sum_{i=1}^m y_i\\<br>\end{cases}<br>$$</p>
 <hr>
