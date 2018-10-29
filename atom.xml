@@ -6,7 +6,7 @@
   <link href="/luojinrong.github.io/atom.xml" rel="self"/>
   
   <link href="https://luojinrong.github.io/"/>
-  <updated>2018-10-28T12:54:17.610Z</updated>
+  <updated>2018-10-29T11:21:09.654Z</updated>
   <id>https://luojinrong.github.io/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="https://luojinrong.github.io/2018/10/27/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/"/>
     <id>https://luojinrong.github.io/2018/10/27/最小二乘法/</id>
     <published>2018-10-27T13:21:36.000Z</published>
-    <updated>2018-10-28T12:54:17.610Z</updated>
+    <updated>2018-10-29T11:21:09.654Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;p&gt;在数学建模课上新学习的算法，（虽然说之前学高数的时候学习过，但是好像没学会或者是忘了。这里就记一下自己关于最小二乘法的理解。&lt;/p&gt;
+      &lt;p&gt;在数学建模课上新学习的算法，（虽然说之前学高数的时候学习过，但是好像没学会或者是忘了。这里就记一下自己关于最小二乘法的理解。&lt;/p&gt;
     
     </summary>
     
@@ -39,17 +39,12 @@
     <link href="https://luojinrong.github.io/2018/10/24/markdown-MathJax/"/>
     <id>https://luojinrong.github.io/2018/10/24/markdown-MathJax/</id>
     <published>2018-10-24T14:13:52.000Z</published>
-    <updated>2018-10-27T15:23:13.854Z</updated>
+    <updated>2018-10-29T11:23:42.378Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          
-        
-      
+      &lt;p&gt;首先要在文中显示数学公式，必须先在front matter 写上&lt;strong&gt;&lt;em&gt;mathjax: true&lt;/em&gt;&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;说明：行内公式用左右各一个&lt;code&gt;$&lt;/code&gt;包围，公式块用左右各两个&lt;code&gt;$&lt;/code&gt;包围.&lt;/p&gt;
     
     </summary>
     
@@ -65,17 +60,11 @@
     <link href="https://luojinrong.github.io/2018/10/21/markdown%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6/"/>
     <id>https://luojinrong.github.io/2018/10/21/markdown转义字符/</id>
     <published>2018-10-21T13:43:47.000Z</published>
-    <updated>2018-10-27T15:22:04.435Z</updated>
+    <updated>2018-10-29T11:22:25.165Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          
-        
-      
+      &lt;p&gt;本文将放一些在markdown中特殊字符的转义方法。&lt;/p&gt;
     
     </summary>
     
@@ -91,17 +80,11 @@
     <link href="https://luojinrong.github.io/2018/10/20/Markdown%E5%AD%A6%E4%B9%A0/"/>
     <id>https://luojinrong.github.io/2018/10/20/Markdown学习/</id>
     <published>2018-10-20T06:48:29.000Z</published>
-    <updated>2018-10-27T15:00:29.892Z</updated>
+    <updated>2018-10-29T11:22:59.259Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          
-        
-      
+      &lt;p&gt;本文将存放一些关于标记语言&lt;a href=&quot;https://baike.baidu.com/item/markdown&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;strong&gt;markdown&lt;/strong&gt;&lt;/a&gt;的一些基础语法，供自己学习、记忆使用，由于初学该语言，难免有些错误，请指出。&lt;/p&gt;
     
     </summary>
     
