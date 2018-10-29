@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="是我"><title>最小二乘法 | CS</title><link rel="stylesheet" type="text/css" href="/luojinrong.github.io/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/luojinrong.github.io/favicon.ico"><link rel="apple-touch-icon" href="/luojinrong.github.io/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/luojinrong.github.io/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/luojinrong.github.io/atom.xml"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = 'https://hm.baidu.com/hm.js?' + '40ce7ce9cf2783418f371022c3e6a2bf';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();
+  </script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">最小二乘法</h1><a id="logo" href="/luojinrong.github.io/.">CS</a><p class="description">ljr的小bk</p></div><div id="nav-menu"><a class="current" href="/luojinrong.github.io/."><i class="fa fa-home"> 首页</i></a><a href="/luojinrong.github.io/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/luojinrong.github.io/about/"><i class="fa fa-user"> 关于</i></a><a href="/luojinrong.github.io/messageboard/"><i class="fa null"> 留言板</i></a><a href="/luojinrong.github.io/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">最小二乘法</h1><div class="post-meta">Oct 27, 2018<span> | </span><span class="category"><a href="/luojinrong.github.io/categories/算法/">算法</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#最小二乘法定义："><span class="toc-number">1.</span> <span class="toc-text">最小二乘法定义：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原始方法"><span class="toc-number">2.</span> <span class="toc-text">原始方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备"><span class="toc-number">2.1.</span> <span class="toc-text">准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#极小化"><span class="toc-number">2.2.</span> <span class="toc-text">极小化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#求解"><span class="toc-number">2.3.</span> <span class="toc-text">求解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#推广"><span class="toc-number">2.4.</span> <span class="toc-text">推广</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#矩阵"><span class="toc-number">3.</span> <span class="toc-text">矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备-1"><span class="toc-number">3.1.</span> <span class="toc-text">准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#求解-1"><span class="toc-number">3.2.</span> <span class="toc-text">求解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拓展"><span class="toc-number">3.3.</span> <span class="toc-text">拓展</span></a></li></ol></li></ol></div></div><div class="post-content"><p>在数学建模课上新学习的算法，（虽然说之前学高数的时候学习过，但是好像没学会或者是忘了。这里就记一下自己关于最小二乘法的理解。</p>
+<a id="more"></a>
+<hr>
+<h2 id="最小二乘法定义："><a href="#最小二乘法定义：" class="headerlink" title="最小二乘法定义："></a>最小二乘法定义：</h2><p>给定某种函数类型$y=f(x)$和m个数据点$(x_i,y_i)$的一个集合，极小化绝对偏差$|y_i-f(x_i)|$之平方和，即确定函数类型$y=f(x)$的参数从而极小化：<br>$$\sum_{i=1}^m |y_i-f(x_i)|^2$$</p>
+<hr>
+<h2 id="原始方法"><a href="#原始方法" class="headerlink" title="原始方法"></a>原始方法</h2><p>最小二乘法最原始的做法便是利用方程求解的思想，一个个求出拟合方程中的未知量。</p>
+<p>这里我就讲讲关于一次方程，也就是直线，通过原始方法拟合的步骤。</p>
+<hr>
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>首先假设我们有<code>m</code>组原始数据，记为($x_i,y_i)(1\leq i \leq m)$.</p>
+<p>同时我们假设拟合后的函数为$y=kx+b$.</p>
+<p>假设绝对偏差平方和为$S=\sum_{i=1}^m |y_i-f(x_i)|^2$.</p>
+<hr>
+<h3 id="极小化"><a href="#极小化" class="headerlink" title="极小化"></a>极小化</h3><p>接下来我们极小化绝对偏差$S$.</p>
+<p>我们对$S$分别求$k,b$的偏导，并使其为零：</p>
+<p>$$<br>\begin{cases}<br>\frac {\partial S}{\partial k}=2\sum_{i=1}^m (y_i-(kx_i+b))(-x_i)=0\\<br>\frac {\partial S}{\partial b}=2\sum_{i=1}^m (y_i-(kx_i+b))(-1)=0\\<br>\end{cases}<br>$$</p>
+<p>整理：</p>
+<p>$$<br>\begin{cases}<br>\sum_{i=1}^m kx_i^2+\sum_{i=1}^m bx_i=\sum_{i=1}^m x_iy_i\\<br>\sum_{i=1}^m kx_i+mb=\sum_{i=1}^m y_i\\<br>\end{cases}<br>$$</p>
+<hr>
+<h3 id="求解"><a href="#求解" class="headerlink" title="求解"></a>求解</h3><p>利用行列式求解方程组：</p>
+<p>$$<br>D=<br>\begin{vmatrix}<br>\sum_{i=1}^m x_i^2&amp;\sum_{i=1}^m x_i\\<br>\sum_{i=1}^m x_i&amp;m\\<br>\end{vmatrix}<br>$$</p>
+<p>$$<br>D_k=<br>\begin{vmatrix}<br>\sum_{i=1}^m x_iy_i&amp;\sum_{i=1}^m x_i\\<br>\sum_{i=1}^m y_i&amp;m\\<br>\end{vmatrix}<br>$$</p>
+<p>$$<br>D_b=<br>\begin{vmatrix}<br>\sum_{i=1}^m x_i^2&amp;\sum_{i=1}^m x_iy_i\\<br>\sum_{i=1}^m x_i&amp;\sum_{i=1}^m y_i\\<br>\end{vmatrix}<br>$$</p>
+<p>最后通过$k=\frac {D_k}{D},b=\frac {D_b}{D}$即可求出拟合后的方程中的参数。</p>
+<hr>
+<h3 id="推广"><a href="#推广" class="headerlink" title="推广"></a>推广</h3><p>更多次函数拟合用此方法求解较为复杂，但如果头铁（我最多做了个二次曲线的拟合，那已经很麻烦了，更蠢的是，我当时忘记了MATLAB中的det函数可以直接求解行列式，我自己手动展开输入算式，都是泪）硬要做也不是不可以，更方便的方法见下。</p>
+<hr>
+<h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><p>高次函数的拟合我们可以用矩阵更快的求出结果。</p>
+<hr>
+<h3 id="准备-1"><a href="#准备-1" class="headerlink" title="准备"></a>准备</h3><p>为了牛逼起见，这里我们直接上N次函数的拟合（有N+1个未知数）,还是m组$(x_i,y_i)(1\leq i\leq m)$。</p>
+<p>设参数矩阵：</p>
+<p>$$<br>A=<br>\begin{pmatrix}<br>a_1&amp;a_2&amp;a_3&amp;\cdots &amp;a_{N+1}\\<br>\end{pmatrix}<br>$$</p>
+<p>设自变量矩阵：</p>
+<p>$$<br>X=<br>\begin{pmatrix}<br>x_1^N&amp;x_2^N&amp;x_3^N&amp;\cdots&amp;x_m^N\\<br>x_1^{N-1}&amp;x_2^{N-1}&amp;x_3^{N-1}&amp;\cdots&amp;x_m^{N-1}\\<br>\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\<br>x_1&amp;x_2&amp;x_3&amp;\cdots&amp;x_m\\<br>1&amp;1&amp;1&amp;\cdots&amp;1\\<br>\end{pmatrix}<br>$$</p>
+<p>设因变量矩阵：</p>
+<p>$$<br>Y=<br>\begin{pmatrix}<br>y_1&amp;y_2&amp;y_3&amp;\cdots&amp;y_m\\<br>\end{pmatrix}<br>$$</p>
+<hr>
+<h3 id="求解-1"><a href="#求解-1" class="headerlink" title="求解"></a>求解</h3><p>于是我们得到方程$AX=Y$。求解步骤如下：</p>
+<p>$$<br>AX=Y<br>$$<br>两边右乘X的转置<br>$$<br>AXX^T=YX^T<br>$$<br>两边右乘XX^T的逆<br>$$<br>AXX^T(XX^T)^{-1}=YX^T(XX^T)^{-1}<br>$$<br>解得<br>$$<br>A=YX^T(XX^T)^{-1}\\<br>$$</p>
+<p>注：不能直接两边右乘$X$的逆，因为$X$可能不存在逆矩阵，而$XX^T$的逆一定存在。</p>
+<hr>
+<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><p>如果要求多项式某几项为零时，则自变量矩阵不加入相对于次数的行，而参数矩阵去掉相应的参数即可。</p>
+<p>例如，如果一个N次函数拟合时要求没有一次项，那么：</p>
+<p>参数矩阵：</p>
+<p>$$<br>A=<br>\begin{pmatrix}<br>a_1&amp;a_2&amp;a_3&amp;\cdots &amp;a_{N-1}&amp;a_{N+1}\\<br>\end{pmatrix}<br>$$</p>
+<p>自变量矩阵：</p>
+<p>$$<br>X=<br>\begin{pmatrix}<br>x_1^N&amp;x_2^N&amp;x_3^N&amp;\cdots&amp;x_m^N\\<br>x_1^{N-1}&amp;x_2^{N-1}&amp;x_3^{N-1}&amp;\cdots&amp;x_m^{N-1}\\<br>\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\<br>x_1^2&amp;x_2^2&amp;x_3^2&amp;\cdots&amp;x_m^2\\<br>1&amp;1&amp;1&amp;\cdots&amp;1\\<br>\end{pmatrix}<br>$$</p>
+<p>因变量矩阵$Y$不变。</p>
+<p>然后按照上述公式求解即可。</p>
+<hr>
+<p><code>return 0;</code></p>
+<hr>
+</div><div class="tags"></div><div class="post-nav"><a class="next" href="/luojinrong.github.io/2018/10/24/markdown-MathJax/">markdown+MathJax</a></div><div id="container"></div><link rel="stylesheet" type="text/css" href="//unpkg.com/gitalk/dist/gitalk.css?v=0.0.0"><script type="text/javascript" src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js?v=0.0.0"></script><script type="text/javascript" src="//unpkg.com/gitalk/dist/gitalk.min.js?v=0.0.0"></script><script>var gitalk = new Gitalk({
+  clientID: '0483208eb2e3e97a0867',
+  clientSecret: '87809b59419dd27eaa0d3ce977a74c7f85a86617',
+  repo: 'comment',
+  owner: 'luojinrong',
+  admin: ['luojinrong'],
+  id: md5(location.pathname),
+  distractionFreeMode: false
+})
+gitalk.render('container')
+</script></div></div></div><div class="pure-u-1 pure-u-md-1-4"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" target="_blank"><input type="search" name="word" maxlength="20" placeholder="Search"/><input type="hidden" name="si" value="https://luojinrong.github.io"/><input name="tn" type="hidden" value="bds"/><input name="cl" type="hidden" value="3"/><input name="ct" type="hidden" value="2097152"/><input name="s" type="hidden" value="on"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/luojinrong.github.io/categories/工具使用/">工具使用</a></li><li class="category-list-item"><a class="category-list-link" href="/luojinrong.github.io/categories/算法/">算法</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/luojinrong.github.io/tags/markdown/" style="font-size: 15px;">markdown</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/luojinrong.github.io/2018/10/27/最小二乘法/">最小二乘法</a></li><li class="post-list-item"><a class="post-list-link" href="/luojinrong.github.io/2018/10/24/markdown-MathJax/">markdown+MathJax</a></li><li class="post-list-item"><a class="post-list-link" href="/luojinrong.github.io/2018/10/21/markdown转义字符/">markdown转义字符</a></li><li class="post-list-item"><a class="post-list-link" href="/luojinrong.github.io/2018/10/20/Markdown学习/">Markdown学习</a></li><li class="post-list-item"><a class="post-list-link" href="/luojinrong.github.io/2018/10/15/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://github.com/luojinrong/" title="我的GitHub" target="_blank">我的GitHub</a><ul></ul><a href="https://freshwlnd.github.io/" title="小基佬" target="_blank">小基佬</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/luojinrong.github.io/." rel="nofollow">CS.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/luojinrong.github.io/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/luojinrong.github.io/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css"><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script><script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async></script><script type="text/javascript" src="/luojinrong.github.io/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/luojinrong.github.io/js/smartresize.js?v=0.0.0"></script></div></body></html>
