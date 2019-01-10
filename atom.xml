@@ -6,7 +6,7 @@
   <link href="/luojinrong.github.io/atom.xml" rel="self"/>
   
   <link href="https://luojinrong.github.io/"/>
-  <updated>2019-01-10T11:02:55.883Z</updated>
+  <updated>2019-01-10T11:46:34.555Z</updated>
   <id>https://luojinrong.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>最大团</title>
+    <link href="https://luojinrong.github.io/2019/01/10/%E6%9C%80%E5%A4%A7%E5%9B%A2/"/>
+    <id>https://luojinrong.github.io/2019/01/10/最大团/</id>
+    <published>2019-01-10T11:09:39.000Z</published>
+    <updated>2019-01-10T11:46:34.555Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;立个flag——寒假回家之前，一天至少一个算法。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="https://luojinrong.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="最大团 图论" scheme="https://luojinrong.github.io/tags/%E6%9C%80%E5%A4%A7%E5%9B%A2-%E5%9B%BE%E8%AE%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>C++优先队列stl</title>
