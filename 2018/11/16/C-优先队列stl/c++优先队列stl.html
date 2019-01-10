@@ -1,0 +1,73 @@
+<hr>
+<p>title: C++优先队列stl<br>date: 2018-11-16 09:04:32<br>toc: true<br>categories: STL使用</p>
+<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p>早上本来想写写英语作文的，结果看作文题目过于简短，于是就来学学优先队列的用法哈哈哈。</p>
+<!-- more -->
+<hr>
+<h2 id="优先队列介绍"><a href="#优先队列介绍" class="headerlink" title="优先队列介绍"></a>优先队列介绍</h2><p>队列是一种先进先出的数据结构，比较符合我们的思维模式，至今我也学了一些算法使用了队列，比如最短路径的SPFA算法，现在又学到了拓扑排序。但是这次并不是队列这么简单，而是用到的高级版的队列，即优先队列。</p>
+<p>优先队列(priority queue)，顾名思义，就是队列中的各元素被赋予了相应的优先级，就好像最原始的队列，其实也是有优先级的，即是先入队的优先。而优先队列，其元素的优先级就不仅仅局限于入队的先后顺序，而是可以被自定义为元素的大小，这类似与堆的操作。</p>
+<hr>
+<h2 id="C-的标准模板库-STL-中的优先队列"><a href="#C-的标准模板库-STL-中的优先队列" class="headerlink" title="C++的标准模板库(STL)中的优先队列"></a>C++的标准模板库(STL)中的优先队列</h2><p>在STL中定义的优先队列，其元素的默认比较规则是按元素从大到小排列，我们可以通过重载”&lt;”来重新定义比较规则。(据说重载”&gt;”会出问题，具体以后在尝试，flag先立着)。</p>
+<p>接下来我们来看看优先队列在STL中是如何被定义的：<code>priority_queue&lt;Type,Container,Functional&gt;</code>，其中Type是数据类型（可以是任何数据类型，包括自己定义的一些乱七八糟的），Container是存储数据所使用的容器（可以使用vector、deque，但是不能使用list，默认是vector），Functional是比较的方式。</p>
+<hr>
+<h2 id="STL优先队列的使用"><a href="#STL优先队列的使用" class="headerlink" title="STL优先队列的使用"></a>STL优先队列的使用</h2><hr>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><code>priority_queue&lt;Type,Container=vector&lt;Type&gt;,cmp=greater&lt;Type&gt;&gt;que;</code></p>
+<p>其中，第一个参数为数据类型，第二个参数为容器（默认为vector），第三个参数为比较函数（默认大值优先）。</p>
+<hr>
+<h3 id="比较函数的写法"><a href="#比较函数的写法" class="headerlink" title="比较函数的写法"></a>比较函数的写法</h3><ul>
+<li>使用C++自带的库函数<functional></li>
+<li>自定义优先级1</li>
+<li>自定义优先级2</li>
+<li>自定义优先级3</li>
+</ul>
+<p>方法一：使用C++自带的库函数<functional></p>
+<p>首先在头文件中引用include库函数</p>
+<p><code>#include&lt;functional&gt;</code></p>
+<p>functional 中提供了如下的基于模板的比较函数对象。</p>
+<ul>
+<li>equal_to<Type>: 等于</li>
+<li>not_equal_to<Type>: 不等于</li>
+<li>greater<Type>: 大于</li>
+<li>greater_equal<Type>: 大于等于</li>
+<li>less<Type>: 小于</li>
+<li>less_equal<Type>: 小于等于</li>
+</ul>
+<p>创建方法：<code>priority_queue&lt;int,vector&lt;int&gt;,less&lt;int&gt;&gt;que;</code></p>
+<p>方法二：自定义优先级1，队列元素为数值型</p>
+<pre><code>struct cmp1{
+    bool operator()(int &amp;a,int &amp;b){
+        return a&lt;b;//最大值优先
+    }
+};
+struct cmp{
+    bool operator()(int &amp;a,int &amp;b){
+        return a&lt;b;//最小值优先
+    }
+};
+</code></pre><p>创建方法：<code>priority_queue&lt;int,vector&lt;int&gt;,cmp1&gt;que;</code></p>
+<p>方法三：自定义优先级2，队列元素为结构体</p>
+<pre><code>struct node1{
+    int x,y;
+    bool operator &lt; (const node1 &amp;a) const {//只能重载&lt;
+        retrun x&lt;a.x;//最大值优先
+    }
+};
+struct node2{
+    int x,y;
+    bool operator &lt; (const node2 &amp;a) const {
+        retrun x&gt;a.x;//最小值优先
+    }
+};
+</code></pre><p>创建方法：<code>priority_queue&lt;node1&gt;que;</code></p>
+<p>方法四：自定义优先级3，队列元素为结构体</p>
+<pre><code>struct node{
+    int x,y;
+}；
+bool operator &lt; (const node &amp;a,const node &amp;b){
+    return a.x&lt;b.x;按成员x最大值优先
+}
+/*bool operator &lt; (const node &amp;a,const node &amp;b){//由于都是重载&lt;,所以两种比较形式只能同时存在一种
+    return a.y&gt;b.y;按成员y最小值优先
+}*/
+</code></pre><p>创建方法：<code>priority_queue&lt;node&gt;que;</code></p>
+<hr>
+<p><code>return 0;</code></p>
