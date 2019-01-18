@@ -6,7 +6,7 @@
   <link href="/luojinrong.github.io/atom.xml" rel="self"/>
   
   <link href="https://luojinrong.github.io/"/>
-  <updated>2019-01-14T00:48:28.720Z</updated>
+  <updated>2019-01-18T01:05:06.748Z</updated>
   <id>https://luojinrong.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>稳定婚姻问题</title>
+    <link href="https://luojinrong.github.io/2019/01/18/%E7%A8%B3%E5%AE%9A%E5%A9%9A%E5%A7%BB%E9%97%AE%E9%A2%98/"/>
+    <id>https://luojinrong.github.io/2019/01/18/稳定婚姻问题/</id>
+    <published>2019-01-18T01:01:59.000Z</published>
+    <updated>2019-01-18T01:05:06.748Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;当我最开始做稳定婚姻问题的时候，以为这就是一个普通的二分匹配问题。于是我去学习了一下二分匹配，而看二分匹配时，在《趣学算法》前面写的是用最大流求解的算法，（真是忘得一干二净），又去学学最大流的算法。学完最大流信心满满的来看二分匹配，却发现后面算法优化里面介绍的匈牙利算法，我又多学了一个算法呢。&lt;/p&gt;
+&lt;p&gt;都学完了之后，准备去A道题练练手，都说趁热打铁不是吗。结果又发现了问题——稳定婚姻是有优先级的！！！&lt;/p&gt;
+&lt;p&gt;这几天的算法感觉都白学了呢，我怎么能眼睁睁看着flag倒下！！（算了&lt;/p&gt;
+&lt;p&gt;现在真的是最终的算法了，可以A稳定婚姻的算法，用自己打的模板测试了两道题，全都是一发过，所以flag绕了我吧。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="https://luojinrong.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="稳定婚姻" scheme="https://luojinrong.github.io/tags/%E7%A8%B3%E5%AE%9A%E5%A9%9A%E5%A7%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>最大流</title>
