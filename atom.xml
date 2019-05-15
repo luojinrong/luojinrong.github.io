@@ -6,7 +6,7 @@
   <link href="/luojinrong.github.io/atom.xml" rel="self"/>
   
   <link href="https://luojinrong.github.io/"/>
-  <updated>2019-01-18T01:08:20.209Z</updated>
+  <updated>2019-05-15T11:28:40.325Z</updated>
   <id>https://luojinrong.github.io/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>欧拉定理</title>
+    <link href="https://luojinrong.github.io/2019/05/15/%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/"/>
+    <id>https://luojinrong.github.io/2019/05/15/欧拉定理/</id>
+    <published>2019-05-15T11:28:40.000Z</published>
+    <updated>2019-05-15T11:28:40.325Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>稳定婚姻问题</title>
@@ -44,7 +58,7 @@
     <link href="https://luojinrong.github.io/2019/01/14/%E6%9C%80%E5%A4%A7%E6%B5%81/"/>
     <id>https://luojinrong.github.io/2019/01/14/最大流/</id>
     <published>2019-01-14T00:48:39.000Z</published>
-    <updated>2019-01-14T00:48:28.720Z</updated>
+    <updated>2019-05-15T11:42:29.348Z</updated>
     
     <summary type="html">
     
@@ -61,7 +75,11 @@
       <category term="算法" scheme="https://luojinrong.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="趣学算法 最大流 图论" scheme="https://luojinrong.github.io/tags/%E8%B6%A3%E5%AD%A6%E7%AE%97%E6%B3%95-%E6%9C%80%E5%A4%A7%E6%B5%81-%E5%9B%BE%E8%AE%BA/"/>
+      <category term="趣学算法" scheme="https://luojinrong.github.io/tags/%E8%B6%A3%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="图论" scheme="https://luojinrong.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
+    
+      <category term="最大流" scheme="https://luojinrong.github.io/tags/%E6%9C%80%E5%A4%A7%E6%B5%81/"/>
     
   </entry>
   
@@ -70,7 +88,7 @@
     <link href="https://luojinrong.github.io/2019/01/10/%E6%9C%80%E5%A4%A7%E5%9B%A2/"/>
     <id>https://luojinrong.github.io/2019/01/10/最大团/</id>
     <published>2019-01-10T11:09:39.000Z</published>
-    <updated>2019-01-14T00:47:34.998Z</updated>
+    <updated>2019-05-15T11:41:16.675Z</updated>
     
     <summary type="html">
     
@@ -81,7 +99,11 @@
       <category term="算法" scheme="https://luojinrong.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="最大团 图论 趣学算法" scheme="https://luojinrong.github.io/tags/%E6%9C%80%E5%A4%A7%E5%9B%A2-%E5%9B%BE%E8%AE%BA-%E8%B6%A3%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+      <category term="趣学算法" scheme="https://luojinrong.github.io/tags/%E8%B6%A3%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="最大团" scheme="https://luojinrong.github.io/tags/%E6%9C%80%E5%A4%A7%E5%9B%A2/"/>
+    
+      <category term="图论" scheme="https://luojinrong.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
     
   </entry>
   
@@ -110,7 +132,7 @@
     <link href="https://luojinrong.github.io/2018/10/27/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/"/>
     <id>https://luojinrong.github.io/2018/10/27/最小二乘法/</id>
     <published>2018-10-27T13:21:36.000Z</published>
-    <updated>2018-10-29T11:21:09.654Z</updated>
+    <updated>2019-05-15T11:41:57.760Z</updated>
     
     <summary type="html">
     
@@ -120,6 +142,8 @@
     
       <category term="算法" scheme="https://luojinrong.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
+    
+      <category term="数论" scheme="https://luojinrong.github.io/tags/%E6%95%B0%E8%AE%BA/"/>
     
   </entry>
   
