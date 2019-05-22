@@ -6,7 +6,7 @@
   <link href="/luojinrong.github.io/atom.xml" rel="self"/>
   
   <link href="https://luojinrong.github.io/"/>
-  <updated>2019-05-16T14:35:37.810Z</updated>
+  <updated>2019-05-22T06:47:16.517Z</updated>
   <id>https://luojinrong.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>leetcode#2</title>
+    <link href="https://luojinrong.github.io/2019/05/22/leetcode-2/"/>
+    <id>https://luojinrong.github.io/2019/05/22/leetcode-2/</id>
+    <published>2019-05-22T06:32:17.000Z</published>
+    <updated>2019-05-22T06:47:16.517Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="题解" scheme="https://luojinrong.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="leetcode" scheme="https://luojinrong.github.io/tags/leetcode/"/>
+    
+  </entry>
   
   <entry>
     <title>最长公共子串(LCS)</title>
