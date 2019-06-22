@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://luojinrong.github.io/"/>
-  <updated>2019-06-01T15:01:54.885Z</updated>
+  <updated>2019-06-22T14:37:28.702Z</updated>
   <id>https://luojinrong.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu下使用QQ的方法</title>
+    <link href="https://luojinrong.github.io/2019/06/22/Ubuntu%E4%B8%8B%E4%BD%BF%E7%94%A8QQ%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>https://luojinrong.github.io/2019/06/22/Ubuntu下使用QQ的方法/</id>
+    <published>2019-06-22T14:11:08.000Z</published>
+    <updated>2019-06-22T14:37:28.702Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具使用" scheme="https://luojinrong.github.io/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>2019计蒜之道初赛第三场</title>

@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="是我"><title>Ubuntu下使用QQ的方法 | CS</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = 'https://hm.baidu.com/hm.js?' + '40ce7ce9cf2783418f371022c3e6a2bf';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();
+  </script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Ubuntu下使用QQ的方法</h1><a id="logo" href="/.">CS</a><p class="description">ljr的小bk</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/messageboard/"><i class="fa null"> 留言板</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Ubuntu下使用QQ的方法</h1><div class="post-meta">Jun 22, 2019<script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><div class="post-content"><h2 id="安装WINE"><a href="#安装WINE" class="headerlink" title="安装WINE"></a>安装WINE</h2><h3 id="一堆废话"><a href="#一堆废话" class="headerlink" title="一堆废话"></a>一堆废话</h3><ul>
+<li>这是一个在Linux下整出一个Windows环境的小工具，他在Linux下面映射出（暂且这么叫吧）Windows中的系统盘，然后再搭配一些动态链接库（dll），就可以运行Windows下的环境了。</li>
+<li>之前其实有看到这个工具，但是嫌麻烦没有去折腾，最近折腾数据库的时候下载了一个MySQL图形界面的工具（navicat），因为实验室电脑用的是Ubuntu，所以在官网下了Linux版的，结果下载过来，发现是wine+windows版navicat，不得不说官方十分偷懒。以至于我在使用过程中出现了乱码问题（因为Linux跟Windows编码方式不一样）。</li>
+<li>这时候想起来反正都已经下载了wine，干脆就去折腾折腾怎么用qq吧，这样就会方便今后的使用。</li>
+</ul>
+<hr>
+<h3 id="正式安装"><a href="#正式安装" class="headerlink" title="正式安装"></a>正式安装</h3><ul>
+<li>首先是安装deepin wine for ubuntu。（由于github下载速度过慢，整了一天没整下来，回寝室无聊看了一下readme文档发现里面写了高速下载方法（readme的重要性））</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git</span><br></pre></td></tr></table></figure>
+<ul>
+<li>这是国内的服务器，下载速度3-4MB/s，真是比我原来10-20kb快不知道多少，而且还有可能被中断。</li>
+</ul>
+<hr>
+<h2 id="安装deepin-wine容器"><a href="#安装deepin-wine容器" class="headerlink" title="安装deepin-wine容器"></a>安装deepin-wine容器</h2><ul>
+<li><p>我在实验室电脑里面安装了TIM和微信，以下是安装步骤：</p>
+</li>
+<li><p>[TIM]: <a href="https://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.qq.office/" target="_blank" rel="noopener">https://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.qq.office/</a></p>
+</li>
+<li><p>[微信]: <a href="https://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.wechat/" target="_blank" rel="noopener">https://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.wechat/</a></p>
+</li>
+<li><p>以上是阿里云镜像下载的安装包，下载其中的deb文件。</p>
+</li>
+<li><p>图形界面的话可以直接双击打开安装。</p>
+</li>
+<li><p>命令行可使用<code>dpkg -i *.deb</code></p>
+</li>
+<li><p>其他容器下载：</p>
+</li>
+</ul>
+<hr>
+<p><code>return 0;</code></p>
+<hr>
+</div><div class="tags"><a href="/tags/工具使用/">工具使用</a></div><div class="post-nav"><a class="next" href="/2019/06/01/2019计蒜之道初赛第三场/">2019计蒜之道初赛第三场</a></div><div id="container"></div><link rel="stylesheet" type="text/css" href="//unpkg.com/gitalk/dist/gitalk.css?v=0.0.0"><script type="text/javascript" src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js?v=0.0.0"></script><script type="text/javascript" src="//unpkg.com/gitalk/dist/gitalk.min.js?v=0.0.0"></script><script>var gitalk = new Gitalk({
+  clientID: '0483208eb2e3e97a0867',
+  clientSecret: '87809b59419dd27eaa0d3ce977a74c7f85a86617',
+  repo: 'comment',
+  owner: 'luojinrong',
+  admin: ['luojinrong'],
+  id: md5(location.pathname),
+  distractionFreeMode: false
+})
+gitalk.render('container')
+</script></div></div></div><div class="pure-u-1 pure-u-md-1-4"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" target="_blank"><input type="search" name="word" maxlength="20" placeholder="Search"/><input type="hidden" name="si" value="https://luojinrong.github.io"/><input name="tn" type="hidden" value="bds"/><input name="cl" type="hidden" value="3"/><input name="ct" type="hidden" value="2097152"/><input name="s" type="hidden" value="on"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/STL使用/">STL使用</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具使用/">工具使用</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/题解/">题解</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/计蒜客/" style="font-size: 15px;">计蒜客</a> <a href="/tags/工具使用/" style="font-size: 15px;">工具使用</a> <a href="/tags/markdown/" style="font-size: 15px;">markdown</a> <a href="/tags/codeforces/" style="font-size: 15px;">codeforces</a> <a href="/tags/leetcode/" style="font-size: 15px;">leetcode</a> <a href="/tags/趣学算法/" style="font-size: 15px;">趣学算法</a> <a href="/tags/图论/" style="font-size: 15px;">图论</a> <a href="/tags/dp/" style="font-size: 15px;">dp</a> <a href="/tags/数论/" style="font-size: 15px;">数论</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/06/22/Ubuntu下使用QQ的方法/">Ubuntu下使用QQ的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/01/2019计蒜之道初赛第三场/">2019计蒜之道初赛第三场</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/23/Round-560-Div-3/">Round#560(Div.3)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/22/leetcode-3/">leetcode#3</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/22/leetcode-2/">leetcode#2</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/16/最长公共子串-LCS/">最长公共子串(LCS)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/15/leetcode-1/">leetcode#1</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/15/欧拉定理/">欧拉定理</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/18/稳定婚姻问题/">稳定婚姻问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/14/最大流/">最大流</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://github.com/luojinrong/" title="我的GitHub" target="_blank">我的GitHub</a><ul></ul><a href="https://freshwlnd.github.io/" title="小基佬" target="_blank">小基佬</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2019 <a href="/." rel="nofollow">CS.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
