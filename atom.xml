@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://luojinrong.github.io/"/>
-  <updated>2019-07-26T14:42:03.240Z</updated>
+  <updated>2019-07-26T15:03:03.543Z</updated>
   <id>https://luojinrong.github.io/</id>
   
   <author>
@@ -17,11 +17,89 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2019 Multi-University Training Contest 2</title>
+    <link href="https://luojinrong.github.io/2019/07/26/2019-Multi-University-Training-Contest-2/"/>
+    <id>https://luojinrong.github.io/2019/07/26/2019-Multi-University-Training-Contest-2/</id>
+    <published>2019-07-26T14:56:52.000Z</published>
+    <updated>2019-07-26T15:03:03.543Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="题解" scheme="https://luojinrong.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="hdu" scheme="https://luojinrong.github.io/tags/hdu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2019 Multi-University Training Contest 1</title>
+    <link href="https://luojinrong.github.io/2019/07/26/2019-Multi-University-Training-Contest-1/"/>
+    <id>https://luojinrong.github.io/2019/07/26/2019-Multi-University-Training-Contest-1/</id>
+    <published>2019-07-26T14:52:07.000Z</published>
+    <updated>2019-07-26T15:04:05.409Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="题解" scheme="https://luojinrong.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="hdu" scheme="https://luojinrong.github.io/tags/hdu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2019牛客暑期多校训练营第三场</title>
+    <link href="https://luojinrong.github.io/2019/07/26/2019%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E4%B8%89%E5%9C%BA/"/>
+    <id>https://luojinrong.github.io/2019/07/26/2019牛客暑期多校训练营第三场/</id>
+    <published>2019-07-26T14:43:07.000Z</published>
+    <updated>2019-07-26T15:07:20.445Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="题解" scheme="https://luojinrong.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="nowcode" scheme="https://luojinrong.github.io/tags/nowcode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2019牛客暑期多校训练营第二场</title>
     <link href="https://luojinrong.github.io/2019/07/26/2019%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E4%BA%8C%E5%9C%BA/"/>
     <id>https://luojinrong.github.io/2019/07/26/2019牛客暑期多校训练营第二场/</id>
     <published>2019-07-26T14:32:47.000Z</published>
-    <updated>2019-07-26T14:42:03.240Z</updated>
+    <updated>2019-07-26T15:06:43.121Z</updated>
     
     <summary type="html">
     
@@ -47,7 +125,7 @@
     <link href="https://luojinrong.github.io/2019/07/26/2019%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E4%B8%80%E5%9C%BA/"/>
     <id>https://luojinrong.github.io/2019/07/26/2019牛客暑期多校训练营第一场/</id>
     <published>2019-07-26T13:57:45.000Z</published>
-    <updated>2019-07-26T14:27:59.491Z</updated>
+    <updated>2019-07-26T15:05:35.724Z</updated>
     
     <summary type="html">
     
@@ -421,48 +499,6 @@
     
     
       <category term="markdown" scheme="https://luojinrong.github.io/tags/markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Markdown学习</title>
-    <link href="https://luojinrong.github.io/2018/10/20/Markdown%E5%AD%A6%E4%B9%A0/"/>
-    <id>https://luojinrong.github.io/2018/10/20/Markdown学习/</id>
-    <published>2018-10-20T06:48:29.000Z</published>
-    <updated>2018-11-16T01:00:25.670Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文将存放一些关于标记语言&lt;a href=&quot;https://baike.baidu.com/item/markdown&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;strong&gt;markdown&lt;/strong&gt;&lt;/a&gt;的一些基础语法，供自己学习、记忆使用，由于初学该语言，难免有些错误，请指出。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="工具使用" scheme="https://luojinrong.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
-    
-    
-      <category term="markdown" scheme="https://luojinrong.github.io/tags/markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://luojinrong.github.io/2018/10/15/hello-world/"/>
-    <id>https://luojinrong.github.io/2018/10/15/hello-world/</id>
-    <published>2018-10-15T12:49:31.686Z</published>
-    <updated>2018-10-15T12:49:31.686Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
