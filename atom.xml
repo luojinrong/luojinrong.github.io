@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://luojinrong.github.io/"/>
-  <updated>2019-07-26T15:03:03.543Z</updated>
+  <updated>2019-07-29T14:23:20.184Z</updated>
   <id>https://luojinrong.github.io/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2019 Multi-University Training Contest 3</title>
+    <link href="https://luojinrong.github.io/2019/07/29/2019-Multi-University-Training-Contest-3/"/>
+    <id>https://luojinrong.github.io/2019/07/29/2019-Multi-University-Training-Contest-3/</id>
+    <published>2019-07-29T14:20:08.000Z</published>
+    <updated>2019-07-29T14:23:20.184Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="题解" scheme="https://luojinrong.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="hdu" scheme="https://luojinrong.github.io/tags/hdu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2019牛客暑期多校训练营第四场</title>
+    <link href="https://luojinrong.github.io/2019/07/29/2019%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E5%9B%9B%E5%9C%BA/"/>
+    <id>https://luojinrong.github.io/2019/07/29/2019牛客暑期多校训练营第四场/</id>
+    <published>2019-07-29T14:10:20.000Z</published>
+    <updated>2019-07-29T14:19:25.125Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="题解" scheme="https://luojinrong.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="nowcode" scheme="https://luojinrong.github.io/tags/nowcode/"/>
+    
+  </entry>
   
   <entry>
     <title>2019 Multi-University Training Contest 2</title>
@@ -458,47 +510,6 @@
     
     
       <category term="数论" scheme="https://luojinrong.github.io/tags/%E6%95%B0%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>markdown+MathJax</title>
-    <link href="https://luojinrong.github.io/2018/10/24/markdown-MathJax/"/>
-    <id>https://luojinrong.github.io/2018/10/24/markdown-MathJax/</id>
-    <published>2018-10-24T14:13:52.000Z</published>
-    <updated>2018-10-29T11:23:42.378Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;首先要在文中显示数学公式，必须先在front matter 写上&lt;strong&gt;&lt;em&gt;mathjax: true&lt;/em&gt;&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;说明：行内公式用左右各一个&lt;code&gt;$&lt;/code&gt;包围，公式块用左右各两个&lt;code&gt;$&lt;/code&gt;包围.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="工具使用" scheme="https://luojinrong.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
-    
-    
-      <category term="markdown" scheme="https://luojinrong.github.io/tags/markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>markdown转义字符</title>
-    <link href="https://luojinrong.github.io/2018/10/21/markdown%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6/"/>
-    <id>https://luojinrong.github.io/2018/10/21/markdown转义字符/</id>
-    <published>2018-10-21T13:43:47.000Z</published>
-    <updated>2018-10-29T11:22:25.165Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文将放一些在markdown中特殊字符的转义方法。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="工具使用" scheme="https://luojinrong.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
-    
-    
-      <category term="markdown" scheme="https://luojinrong.github.io/tags/markdown/"/>
     
   </entry>
   
