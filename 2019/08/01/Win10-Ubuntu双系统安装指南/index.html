@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="是我"><title>Win10+Ubuntu双系统安装指南 | CS</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = 'https://hm.baidu.com/hm.js?' + '40ce7ce9cf2783418f371022c3e6a2bf';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();
+  </script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Win10+Ubuntu双系统安装指南</h1><a id="logo" href="/.">CS</a><p class="description">ljr的小bk</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/messageboard/"><i class="fa null"> 留言板</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Win10+Ubuntu双系统安装指南</h1><div class="post-meta">Aug 1, 2019<span> | </span><span class="category"><a href="/categories/工具使用/">工具使用</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><div class="post-content"><h2 id="Ubuntu-镜像下载"><a href="#Ubuntu-镜像下载" class="headerlink" title="Ubuntu 镜像下载"></a>Ubuntu 镜像下载</h2><ul>
+<li>可以前往Ubuntu官网下载最新版的Ubuntu镜像，我下载的是<code>Ubuntu 18.04.2 LTS</code></li>
+<li><a href="https://ubuntu.com/download/desktop" target="_blank" rel="noopener">下载地址</a></li>
+</ul>
+<hr>
+<h2 id="Windows预留一块空闲区域"><a href="#Windows预留一块空闲区域" class="headerlink" title="Windows预留一块空闲区域"></a>Windows预留一块空闲区域</h2><ul>
+<li>我是先装的windows系统，然后在这基础上安装Ubuntu。</li>
+<li>在这之前我们首先要在硬盘中空闲出一块空间，我留了大概一半的机械硬盘空间给Ubuntu使用，当然如果想要给Ubuntu固态+机械的话也是可以实现的，不是很麻烦，只是我没想就开始了，就不想重新来过。</li>
+<li>具体操作的话可以在Windows下按<code>Win+X</code>选择磁盘管理，重新进行分区，预留一块空闲块（也不一定非要空闲块，只不过如果有数据的话需要备份一下，不然数据不一定还在。如果要留出固态空间，可在C盘选择压缩分区。</li>
+</ul>
+<hr>
+<h2 id="正式开始"><a href="#正式开始" class="headerlink" title="正式开始"></a>正式开始</h2><ul>
+<li><p>将Ubuntu镜像加载到硬盘，并将里面的文件全部复制到本地（随便哪个盘都行）。</p>
+</li>
+<li><p>下载一个<code>BOOTICE</code>，在里面菜单栏选择UEFI，左侧添加，找到刚刚复制过去的路径，下面<code>EFI/BOOT/</code>两个<code>.efi</code>文件全部添加进去（主要用到的是<code>bootx64.efi</code>）。</p>
+</li>
+<li>重启电脑，开机的时候一直按<code>F12</code>，进去后选择刚刚<code>bootx64.efi</code>对应的选项，就进入安装Ubuntu的界面了。</li>
+</ul>
+<hr>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
+<li>分区注意：<ul>
+<li>交换空间：主分区；该空间是用来做虚拟内存的，可以选择内存大小的1-2倍。</li>
+<li>efi系统空间：逻辑分区；这个空间是必要的，网上说不要小于256MB，我直接给分配了1024MB。</li>
+<li>/：ex4，逻辑分区；这个空间下相当于就是一个大的磁盘，主目录，所有文件都放在这下面。</li>
+<li>/usr，/home等等：这些东西没有必要独立设置空间，他们都是在主目录下的，分配空间反而限制了他们的大小。</li>
+</ul>
+</li>
+<li>开机引导所选择的分区为efi所在分区。</li>
+</ul>
+<hr>
+<p><code>return 0;</code></p>
+<hr>
+</div><div class="tags"><a href="/tags/工具使用/">工具使用</a></div><div class="post-nav"><a class="pre" href="/2019/08/01/VIM配置笔记/">VIM配置笔记</a><a class="next" href="/2019/07/29/2019-Multi-University-Training-Contest-3/">2019 Multi-University Training Contest 3</a></div><div id="container"></div><link rel="stylesheet" type="text/css" href="//unpkg.com/gitalk/dist/gitalk.css?v=0.0.0"><script type="text/javascript" src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js?v=0.0.0"></script><script type="text/javascript" src="//unpkg.com/gitalk/dist/gitalk.min.js?v=0.0.0"></script><script>var gitalk = new Gitalk({
+  clientID: '0483208eb2e3e97a0867',
+  clientSecret: '87809b59419dd27eaa0d3ce977a74c7f85a86617',
+  repo: 'comment',
+  owner: 'luojinrong',
+  admin: ['luojinrong'],
+  id: md5(location.pathname),
+  distractionFreeMode: false
+})
+gitalk.render('container')
+</script></div></div></div><div class="pure-u-1 pure-u-md-1-4"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" target="_blank"><input type="search" name="word" maxlength="20" placeholder="Search"/><input type="hidden" name="si" value="https://luojinrong.github.io"/><input name="tn" type="hidden" value="bds"/><input name="cl" type="hidden" value="3"/><input name="ct" type="hidden" value="2097152"/><input name="s" type="hidden" value="on"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/STL使用/">STL使用</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具使用/">工具使用</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/题解/">题解</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/工具使用/" style="font-size: 15px;">工具使用</a> <a href="/tags/nowcode/" style="font-size: 15px;">nowcode</a> <a href="/tags/计蒜客/" style="font-size: 15px;">计蒜客</a> <a href="/tags/趣学算法/" style="font-size: 15px;">趣学算法</a> <a href="/tags/codeforces/" style="font-size: 15px;">codeforces</a> <a href="/tags/hdu/" style="font-size: 15px;">hdu</a> <a href="/tags/markdown/" style="font-size: 15px;">markdown</a> <a href="/tags/leetcode/" style="font-size: 15px;">leetcode</a> <a href="/tags/图论/" style="font-size: 15px;">图论</a> <a href="/tags/数论/" style="font-size: 15px;">数论</a> <a href="/tags/dp/" style="font-size: 15px;">dp</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/08/01/VIM配置笔记/">VIM配置笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/01/Win10-Ubuntu双系统安装指南/">Win10+Ubuntu双系统安装指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/29/2019-Multi-University-Training-Contest-3/">2019 Multi-University Training Contest 3</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/29/2019牛客暑期多校训练营第四场/">2019牛客暑期多校训练营第四场</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/26/2019-Multi-University-Training-Contest-2/">2019 Multi-University Training Contest 2</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/26/2019-Multi-University-Training-Contest-1/">2019 Multi-University Training Contest 1</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/26/2019牛客暑期多校训练营第三场/">2019牛客暑期多校训练营第三场</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/26/2019牛客暑期多校训练营第二场/">2019牛客暑期多校训练营第二场</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/26/2019牛客暑期多校训练营第一场/">2019牛客暑期多校训练营第一场</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/22/Ubuntu下使用QQ的方法/">Ubuntu下使用QQ的方法</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://github.com/luojinrong/" title="我的GitHub" target="_blank">我的GitHub</a><ul></ul><a href="https://freshwlnd.github.io/" title="小基佬" target="_blank">小基佬</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2019 <a href="/." rel="nofollow">CS.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
