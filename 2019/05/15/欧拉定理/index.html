@@ -31,9 +31,7 @@
 <li>即$a^x \mod n=a^{x \mod {n-1}}\mod n$</li>
 </ul>
 <hr>
-<h2 id="扩展欧拉定理"><a href="#扩展欧拉定理" class="headerlink" title="扩展欧拉定理"></a>扩展欧拉定理</h2><ul>
-<li>$a^x \mod n\equiv a^{x\mod \phi (n)+\phi (n)}\mod n$,a,x,n无需满足任何条件</li>
-</ul>
+<h2 id="扩展欧拉定理"><a href="#扩展欧拉定理" class="headerlink" title="扩展欧拉定理"></a>扩展欧拉定理</h2><p>$$<br>a^x \mod n\equiv \begin{cases}<br>a^x,x&lt;\phi (n)\<br>a^{x\mod \phi (n)+\phi (n)}\mod n,x\geq \phi (n)<br>\end{cases}<br>$$</p>
 <hr>
 <h2 id="字符形式输入的大数取模处理方法"><a href="#字符形式输入的大数取模处理方法" class="headerlink" title="字符形式输入的大数取模处理方法"></a>字符形式输入的大数取模处理方法</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">mod</span><span class="params">()</span></span>&#123;<span class="comment">//求b%f(m)</span></span><br><span class="line">	ll len=<span class="built_in">strlen</span>(s),ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">		ans=ans*<span class="number">10</span>+(s[i]-<span class="string">'0'</span>);</span><br><span class="line">		ans%=(m<span class="number">-1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
