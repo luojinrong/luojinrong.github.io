@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://luojinrong.github.io/"/>
-  <updated>2019-09-03T14:23:44.947Z</updated>
+  <updated>2019-09-03T14:24:17.201Z</updated>
   <id>https://luojinrong.github.io/</id>
   
   <author>
@@ -15,6 +15,106 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2019 Multi-University Training Contest 10</title>
+    <link href="https://luojinrong.github.io/2019/09/03/2019-Multi-University-Training-Contest-10/"/>
+    <id>https://luojinrong.github.io/2019/09/03/2019-Multi-University-Training-Contest-10/</id>
+    <published>2019-09-03T14:08:20.000Z</published>
+    <updated>2019-09-03T14:24:17.201Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;进度&quot;&gt;&lt;a href=&quot;#进度&quot; class=&quot;headerlink&quot; title=&quot;进度&quot;&gt;&lt;/a&gt;进度&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://luojinrong.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="hdu" scheme="https://luojinrong.github.io/tags/hdu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2019 Multi-University Training Contest 9</title>
+    <link href="https://luojinrong.github.io/2019/09/03/2019-Multi-University-Training-Contest-9/"/>
+    <id>https://luojinrong.github.io/2019/09/03/2019-Multi-University-Training-Contest-9/</id>
+    <published>2019-09-03T14:07:41.000Z</published>
+    <updated>2019-09-03T14:24:11.276Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;进度&quot;&gt;&lt;a href=&quot;#进度&quot; class=&quot;headerlink&quot; title=&quot;进度&quot;&gt;&lt;/a&gt;进度&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://luojinrong.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="hdu" scheme="https://luojinrong.github.io/tags/hdu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2019 Multi-University Training Contest 8</title>
+    <link href="https://luojinrong.github.io/2019/09/03/2019-Multi-University-Training-Contest-8/"/>
+    <id>https://luojinrong.github.io/2019/09/03/2019-Multi-University-Training-Contest-8/</id>
+    <published>2019-09-03T14:06:50.000Z</published>
+    <updated>2019-09-03T14:24:04.901Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;进度&quot;&gt;&lt;a href=&quot;#进度&quot; class=&quot;headerlink&quot; title=&quot;进度&quot;&gt;&lt;/a&gt;进度&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://luojinrong.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="hdu" scheme="https://luojinrong.github.io/tags/hdu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2019 Multi-University Training Contest 7</title>
+    <link href="https://luojinrong.github.io/2019/09/03/2019-Multi-University-Training-Contest-7/"/>
+    <id>https://luojinrong.github.io/2019/09/03/2019-Multi-University-Training-Contest-7/</id>
+    <published>2019-09-03T14:05:40.000Z</published>
+    <updated>2019-09-03T14:23:58.900Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;进度&quot;&gt;&lt;a href=&quot;#进度&quot; class=&quot;headerlink&quot; title=&quot;进度&quot;&gt;&lt;/a&gt;进度&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://luojinrong.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="hdu" scheme="https://luojinrong.github.io/tags/hdu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2019 Multi-University Training Contest 6</title>
+    <link href="https://luojinrong.github.io/2019/09/03/2019-Multi-University-Training-Contest-6/"/>
+    <id>https://luojinrong.github.io/2019/09/03/2019-Multi-University-Training-Contest-6/</id>
+    <published>2019-09-03T14:04:43.000Z</published>
+    <updated>2019-09-03T14:23:52.739Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;进度&quot;&gt;&lt;a href=&quot;#进度&quot; class=&quot;headerlink&quot; title=&quot;进度&quot;&gt;&lt;/a&gt;进度&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://luojinrong.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="hdu" scheme="https://luojinrong.github.io/tags/hdu/"/>
+    
+  </entry>
   
   <entry>
     <title>2019 Multi-University Training Contest 5</title>
@@ -342,136 +442,6 @@
     
     
       <category term="codeforces" scheme="https://luojinrong.github.io/tags/codeforces/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>leetcode#3</title>
-    <link href="https://luojinrong.github.io/2019/05/22/leetcode-3/"/>
-    <id>https://luojinrong.github.io/2019/05/22/leetcode-3/</id>
-    <published>2019-05-22T06:57:19.000Z</published>
-    <updated>2019-05-22T08:10:27.577Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="题解" scheme="https://luojinrong.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="leetcode" scheme="https://luojinrong.github.io/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>leetcode#2</title>
-    <link href="https://luojinrong.github.io/2019/05/22/leetcode-2/"/>
-    <id>https://luojinrong.github.io/2019/05/22/leetcode-2/</id>
-    <published>2019-05-22T06:32:17.000Z</published>
-    <updated>2019-05-22T06:47:16.517Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="题解" scheme="https://luojinrong.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="leetcode" scheme="https://luojinrong.github.io/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>最长公共子串(LCS)</title>
-    <link href="https://luojinrong.github.io/2019/05/16/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E4%B8%B2-LCS/"/>
-    <id>https://luojinrong.github.io/2019/05/16/最长公共子串-LCS/</id>
-    <published>2019-05-16T13:31:22.000Z</published>
-    <updated>2019-05-16T14:35:37.810Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="https://luojinrong.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="dp" scheme="https://luojinrong.github.io/tags/dp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>leetcode#1</title>
-    <link href="https://luojinrong.github.io/2019/05/15/leetcode-1/"/>
-    <id>https://luojinrong.github.io/2019/05/15/leetcode-1/</id>
-    <published>2019-05-15T14:42:19.000Z</published>
-    <updated>2019-05-16T14:40:14.107Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="题解" scheme="https://luojinrong.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="leetcode" scheme="https://luojinrong.github.io/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>欧拉定理</title>
-    <link href="https://luojinrong.github.io/2019/05/15/%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/"/>
-    <id>https://luojinrong.github.io/2019/05/15/欧拉定理/</id>
-    <published>2019-05-15T11:28:40.000Z</published>
-    <updated>2019-05-16T14:43:06.877Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="https://luojinrong.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数论" scheme="https://luojinrong.github.io/tags/%E6%95%B0%E8%AE%BA/"/>
     
   </entry>
   
