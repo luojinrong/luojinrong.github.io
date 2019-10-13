@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://luojinrong.github.io/"/>
-  <updated>2019-09-15T11:12:53.418Z</updated>
+  <updated>2019-10-13T09:13:27.651Z</updated>
   <id>https://luojinrong.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hdu 5943(二分匹配)</title>
+    <link href="https://luojinrong.github.io/2019/10/13/hdu-5943-%E4%BA%8C%E5%88%86%E5%8C%B9%E9%85%8D/"/>
+    <id>https://luojinrong.github.io/2019/10/13/hdu-5943-二分匹配/</id>
+    <published>2019-10-13T08:44:24.000Z</published>
+    <updated>2019-10-13T09:13:27.651Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="题解" scheme="https://luojinrong.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="hdu" scheme="https://luojinrong.github.io/tags/hdu/"/>
+    
+  </entry>
   
   <entry>
     <title>2019-ICPC-上海网络赛-F</title>
@@ -410,26 +436,6 @@
     
     
       <category term="nowcode" scheme="https://luojinrong.github.io/tags/nowcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2019 Multi-University Training Contest 2</title>
-    <link href="https://luojinrong.github.io/2019/07/26/2019-Multi-University-Training-Contest-2/"/>
-    <id>https://luojinrong.github.io/2019/07/26/2019-Multi-University-Training-Contest-2/</id>
-    <published>2019-07-26T14:56:52.000Z</published>
-    <updated>2019-07-30T13:23:50.663Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;进度&quot;&gt;&lt;a href=&quot;#进度&quot; class=&quot;headerlink&quot; title=&quot;进度&quot;&gt;&lt;/a&gt;进度&lt;/h2&gt;
-    
-    </summary>
-    
-      <category term="题解" scheme="https://luojinrong.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="hdu" scheme="https://luojinrong.github.io/tags/hdu/"/>
     
   </entry>
   
