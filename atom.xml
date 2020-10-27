@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://luojinrong.github.io/"/>
-  <updated>2020-10-26T13:00:32.518Z</updated>
+  <updated>2020-10-27T13:26:10.578Z</updated>
   <id>https://luojinrong.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>小bk换新皮肤啦！</title>
+    <link href="https://luojinrong.github.io/2020/10/27/%E5%B0%8Fbk%E6%8D%A2%E6%96%B0%E7%9A%AE%E8%82%A4%E5%95%A6%EF%BC%81/"/>
+    <id>https://luojinrong.github.io/2020/10/27/小bk换新皮肤啦！/</id>
+    <published>2020-10-27T12:51:00.000Z</published>
+    <updated>2020-10-27T13:26:10.578Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="工具使用" scheme="https://luojinrong.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+    
+      <category term="工具使用" scheme="https://luojinrong.github.io/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>Round#593(Div.2)</title>
@@ -424,26 +450,6 @@
     
     
       <category term="工具使用" scheme="https://luojinrong.github.io/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2019 Multi-University Training Contest 3</title>
-    <link href="https://luojinrong.github.io/2019/07/29/2019-Multi-University-Training-Contest-3/"/>
-    <id>https://luojinrong.github.io/2019/07/29/2019-Multi-University-Training-Contest-3/</id>
-    <published>2019-07-29T14:20:08.000Z</published>
-    <updated>2020-10-26T13:00:32.486Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;进度&quot;&gt;&lt;a href=&quot;#进度&quot; class=&quot;headerlink&quot; title=&quot;进度&quot;&gt;&lt;/a&gt;进度&lt;/h2&gt;
-    
-    </summary>
-    
-      <category term="题解" scheme="https://luojinrong.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="hdu" scheme="https://luojinrong.github.io/tags/hdu/"/>
     
   </entry>
   
