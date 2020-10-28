@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>Round#560(Div.3) | CS</title>
+
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <link rel="alternate" href="/atom.xml" title="CS">
+  <meta name="description" content="A.Remainder题意给定$n$位的只包含$0$和$1$的数字串，通过操作可以把其中任意$0$变成$1$，$1$变成$0$。使用最少的操作数使得最后得到的数模$10^x$得到$10^y$。 方法 要是操作之后满足题述要求，则要求后$x$位数除了倒数第$y+1$位为$1$之外其他都为$0$。 具体操作为：判断区间$[n-y+1,n]$内$1$的个数，区间$[n-x+1,n-y-1]$内$1$的个">
+<meta name="keywords" content="codeforces">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Round#560(Div.3)">
+<meta property="og:url" content="https://luojinrong.github.io/2019/05/23/Round-560-Div-3/index.html">
+<meta property="og:site_name" content="CS">
+<meta property="og:description" content="A.Remainder题意给定$n$位的只包含$0$和$1$的数字串，通过操作可以把其中任意$0$变成$1$，$1$变成$0$。使用最少的操作数使得最后得到的数模$10^x$得到$10^y$。 方法 要是操作之后满足题述要求，则要求后$x$位数除了倒数第$y+1$位为$1$之外其他都为$0$。 具体操作为：判断区间$[n-y+1,n]$内$1$的个数，区间$[n-x+1,n-y-1]$内$1$的个">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-10-26T13:00:32.517Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Round#560(Div.3)">
+<meta name="twitter:description" content="A.Remainder题意给定$n$位的只包含$0$和$1$的数字串，通过操作可以把其中任意$0$变成$1$，$1$变成$0$。使用最少的操作数使得最后得到的数模$10^x$得到$10^y$。 方法 要是操作之后满足题述要求，则要求后$x$位数除了倒数第$y+1$位为$1$之外其他都为$0$。 具体操作为：判断区间$[n-y+1,n]$内$1$的个数，区间$[n-x+1,n-y-1]$内$1$的个">
+
+  <meta name="keywords" content=",codeforces">
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="CS">
+  <meta name="msapplication-starturl" content="https://luojinrong.github.io/2019/05/23/Round-560-Div-3/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="CS">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.ico">
+
+  
+    <link rel="canonical" href="https://luojinrong.github.io/2019/05/23/Round-560-Div-3/">
+  
+
+  
+  
+
+  
+  
+  
+
+  <link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/custom.css">
+</head>
+<body class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <script>var a=localStorage.getItem("mdui-drawer-close");if(!a){document.getElementsByTagName("body")[0].className+=" mdui-drawer-body-left"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">CS</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="请输入关键字"><input type="hidden" name="sitesearch" value="https://luojinrong.github.io"></form>
+    <div class="search-result"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <script>var a=localStorage.getItem("mdui-drawer-close");if(a){document.getElementById("sidebar").className+=" mdui-drawer-close"};</script>
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">Luo Jinrong</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>ljr的小bk</div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">主页</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">archive</i>
+        <div class="mdui-list-item-content">归档</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/10/">十月 2020<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="mdui-ripple sidebar_archives-count">15</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="mdui-ripple sidebar_archives-count">7</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="mdui-ripple sidebar_archives-count">6</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="mdui-ripple sidebar_archives-count">5</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">class</i>
+        <div class="mdui-list-item-content">分类</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/categories/STL使用/">STL使用<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/工具使用/">工具使用<span class="mdui-ripple sidebar_archives-count">6</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/算法/">算法<span class="mdui-ripple sidebar_archives-count">6</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/题解/">题解<span class="mdui-ripple sidebar_archives-count">29</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">标签</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/codeforce/">codeforce<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/codeforces/">codeforces<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/dp/">dp<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/hdu/">hdu<span class="mdui-ripple sidebar_archives-count">11</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/leetcode/">leetcode<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/markdown/">markdown<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/nowcode/">nowcode<span class="mdui-ripple sidebar_archives-count">10</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/图论/">图论<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/工具使用/">工具使用<span class="mdui-ripple sidebar_archives-count">4</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/推导/">推导<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/数论/">数论<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/模拟/">模拟<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/简单构造/">简单构造<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/计蒜客/">计蒜客<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/贪心/">贪心<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/趣学算法/">趣学算法<span class="mdui-ripple sidebar_archives-count">1</span></a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">关于</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+      <a href="/messageboard/" class="mdui-list-item mdui-ripple">留言板</a>
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">友情链接</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        
+          <a href="javascript:;" class="mdui-list-item mdui-p-l-2 mdui-text-color-theme mdui-ripple" style="justify-content: center;">链接为空</a>
+        
+      </div>
+    </div>
+  </div>
+</aside>
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/material-13.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">Round#560(Div.3)</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2019-05-23 / <i class="iconfont">&#xe601;</i> Luo Jinrong &nbsp;&nbsp; <span id="busuanzi_container_page_pv" style="display: none;"><i class="iconfont">&#xe7fd;</i> <span id="busuanzi_value_page_pv"></span></span></div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">发送到手机</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="http://qr.liantu.com/api.php?w=246&m=10&text=https://luojinrong.github.io/2019/05/23/Round-560-Div-3/">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=Round#560(Div.3)&url=https://luojinrong.github.io/2019/05/23/Round-560-Div-3/&pic=https://luojinrong.github.io/images/favicon.ico&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=Round#560(Div.3)&url=https://luojinrong.github.io/2019/05/23/Round-560-Div-3/&via=Luo Jinrong" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://luojinrong.github.io/2019/05/23/Round-560-Div-3/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=https://luojinrong.github.io/2019/05/23/Round-560-Div-3/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://luojinrong.github.io/2019/05/23/Round-560-Div-3/&title=Round#560(Div.3)" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=CS&title=Round#560(Div.3)&pics=https://luojinrong.github.io/images/favicon.ico&url=https://luojinrong.github.io/2019/05/23/Round-560-Div-3/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=https://luojinrong.github.io/2019/05/23/Round-560-Div-3/&text=Round#560(Div.3)" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <h2 id="A-Remainder"><a href="#A-Remainder" class="headerlink" title="A.Remainder"></a>A.Remainder</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给定$n$位的只包含$0$和$1$的数字串，通过操作可以把其中任意$0$变成$1$，$1$变成$0$。使用最少的操作数使得最后得到的数模$10^x$得到$10^y$。</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
+<li>要是操作之后满足题述要求，则要求后$x$位数除了倒数第$y+1$位为$1$之外其他都为$0$。</li>
+<li>具体操作为：判断区间$[n-y+1,n]$内$1$的个数，区间$[n-x+1,n-y-1]$内$1$的个数，以及区间$[n-y,n-y]$内$0$的个数。</li>
+<li>代码如下：</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">const</span> <span class="keyword">int</span> <span class="title">maxn</span><span class="params">(<span class="number">1e5</span>+<span class="number">5</span>)</span></span>;</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="keyword">int</span> T,n,x,y,ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios_base::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;x&gt;&gt;y;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;y;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(s[n<span class="number">-1</span>-i]==<span class="string">'1'</span>)&#123;</span><br><span class="line">			ans++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(s[n<span class="number">-1</span>-y]==<span class="string">'0'</span>)&#123;</span><br><span class="line">		ans++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=y+<span class="number">1</span>;i&lt;x;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(s[n<span class="number">-1</span>-i]==<span class="string">'1'</span>)&#123;</span><br><span class="line">			ans++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="B-Polycarp-Training"><a href="#B-Polycarp-Training" class="headerlink" title="B.Polycarp Training"></a>B.Polycarp Training</h2><h2 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h2><p>给出$n$个题集，第$i$个题集有$a_i$个问题，要训练$m$天，必须保证第$k$天至少做$k$道题，求最多可以训练多少天。</p>
+<h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><ul>
+<li>先把所有题集按题数从小到大排序，遍历排序后的题集，能满足当天题数要求就做这一套，不能则找下一套。</li>
+<li>坑点：每套题只能做一遍，比如一套题三道题，不能第一天做一道，第二天做这套题剩下的两道。</li>
+<li>代码如下：</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">const</span> <span class="keyword">int</span> <span class="title">maxn</span><span class="params">(<span class="number">2e5</span>+<span class="number">5</span>)</span></span>;</span><br><span class="line"><span class="keyword">int</span> n,a[maxn],ans,flag[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios_base::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	sort(a+<span class="number">1</span>,a+n+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">int</span> id=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(id&lt;=n)&#123;</span><br><span class="line">		<span class="keyword">if</span>(a[id]&gt;=ans+<span class="number">1</span>)&#123;</span><br><span class="line">			ans++;</span><br><span class="line">		&#125;</span><br><span class="line">		id++;</span><br><span class="line"><span class="comment">//		while(flag[ans+1])&#123;</span></span><br><span class="line"><span class="comment">//			ans++;</span></span><br><span class="line"><span class="comment">//			tmp--;</span></span><br><span class="line"><span class="comment">//		&#125;</span></span><br><span class="line"><span class="comment">//		if(a[id]&gt;=ans+1)&#123;</span></span><br><span class="line"><span class="comment">//			if(a[id]-ans-1&gt;=ans+2)&#123;</span></span><br><span class="line"><span class="comment">//				flag[ans++]=1;</span></span><br><span class="line"><span class="comment">//				a[id]-=ans;</span></span><br><span class="line"><span class="comment">//			&#125;</span></span><br><span class="line"><span class="comment">//			else&#123;</span></span><br><span class="line"><span class="comment">//				flag[a[id]]=1;</span></span><br><span class="line"><span class="comment">//				tmp++;</span></span><br><span class="line"><span class="comment">//				id++;</span></span><br><span class="line"><span class="comment">//			&#125;</span></span><br><span class="line"><span class="comment">//		&#125;</span></span><br><span class="line"><span class="comment">//		else&#123;</span></span><br><span class="line"><span class="comment">//			id++;</span></span><br><span class="line"><span class="comment">//		&#125;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="C-Good-String"><a href="#C-Good-String" class="headerlink" title="C.Good String"></a>C.Good String</h2><h3 id="题意-2"><a href="#题意-2" class="headerlink" title="题意"></a>题意</h3><p>定义一个“好字符串”，它拥有偶数个字符，并且奇数位的字符与后一个字符不相等。给一个字符串，问删除几个字符可以把这个字符串变成“好字符串”。</p>
+<h3 id="方法-2"><a href="#方法-2" class="headerlink" title="方法"></a>方法</h3><ul>
+<li>逐字符读入，如果此时结果字符串长度为偶数（包括0），则直接把当前字符加入结果字符串末尾，否则比较跟结果字符串末尾字符是否相等，相等则删除字符数+1，否则加入结果字符串末尾。</li>
+<li>坑点：<strong>不要用getchar()读入字符！</strong></li>
+<li>代码如下：</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">const</span> <span class="keyword">int</span> <span class="title">maxn</span><span class="params">(<span class="number">2e5</span>+<span class="number">5</span>)</span></span>;</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="keyword">char</span> tmp;</span><br><span class="line"><span class="keyword">int</span> n,ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios_base::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; tmp;</span><br><span class="line">		<span class="keyword">if</span>(s.size()%<span class="number">2</span>==<span class="number">0</span>)&#123;</span><br><span class="line">			s.append(&amp;tmp);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(tmp==s[s.size()<span class="number">-1</span>])&#123;</span><br><span class="line">				ans++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				s.append(&amp;tmp);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(s.size()%<span class="number">2</span>)&#123;</span><br><span class="line">		s.pop_back();</span><br><span class="line">		ans++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="string">"\n"</span>&lt;&lt;s&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="D-Almost-All-Divisors"><a href="#D-Almost-All-Divisors" class="headerlink" title="D.Almost All Divisors"></a>D.Almost All Divisors</h2><h3 id="题意-3"><a href="#题意-3" class="headerlink" title="题意"></a>题意</h3><p>给定$n$个整数，表示某个数除了$1$和它本身之外的所有因数，输出这个数，如果这个数不存在，则输出$-1$。</p>
+<h3 id="方法-3"><a href="#方法-3" class="headerlink" title="方法"></a>方法</h3><ul>
+<li>先将输入的因数排序，从头尾向中间遍历，头尾相乘即可得到原数，判断每次遍历得到的两个数的积是否相等（不相等则是$-1$），相等则计算该数的因数个数与输入个数是否相等，相等则找到（不相等则是$-1$）。</li>
+<li>代码如下：</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="function"><span class="keyword">const</span> <span class="keyword">int</span> <span class="title">maxn</span><span class="params">(<span class="number">305</span>)</span></span>;</span><br><span class="line">ll t,n,d[maxn],ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios_base::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">		<span class="keyword">for</span>(ll i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;d[i];</span><br><span class="line">		&#125;</span><br><span class="line">		sort(d,d+n);</span><br><span class="line">		<span class="keyword">if</span>(n%<span class="number">2</span>)&#123;</span><br><span class="line">			ans=d[n/<span class="number">2</span>]*d[n/<span class="number">2</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			ans=d[n/<span class="number">2</span>]*d[n/<span class="number">2</span><span class="number">-1</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(ll i=<span class="number">0</span>;i&lt;n/<span class="number">2</span>;i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(d[i]*d[n<span class="number">-1</span>-i]!=ans)&#123;</span><br><span class="line">				ans=<span class="number">-1</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(ans!=<span class="number">-1</span>)&#123;</span><br><span class="line">			ll tmp=ll(<span class="built_in">sqrt</span>(ans)),num=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span>(tmp*tmp==ans)&#123;</span><br><span class="line">				num=<span class="number">1</span>;</span><br><span class="line">				tmp--;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span>(ll i=<span class="number">2</span>;i&lt;=tmp;i++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(ans%i==<span class="number">0</span>)&#123;</span><br><span class="line">					num+=<span class="number">2</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(num!=n)&#123;</span><br><span class="line">				ans=<span class="number">-1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="E-Two-Arrays-and-Sum-of-Functions"><a href="#E-Two-Arrays-and-Sum-of-Functions" class="headerlink" title="E.Two Arrays and Sum of Functions"></a>E.Two Arrays and Sum of Functions</h2><h3 id="题意-4"><a href="#题意-4" class="headerlink" title="题意"></a>题意</h3><p>给定两个数组$a$，$b$，定义$f(l,r)=\sum_{l\leq i\leq r} a_i\cdot b_i$，求$\sum_{1\leq l\leq r\leq n} f(l,r)$的最小值。</p>
+<h3 id="方法-4"><a href="#方法-4" class="headerlink" title="方法"></a>方法</h3><ul>
+<li>对于每个$a_i\cdot b_i$，从第i个位置分为前后两段，前面有$[1,i],[2,i]…[i,i]$共$i$个区间，后面有$[i,i],[i,i+1]…[i,n]$共$n-i+1$个区间，进行组合可得到$a_i\cdot b_i$被包含在$i(n-i+1)$个区间中，所以预处理时对$a_i$乘$i(n-i+1)$，然后在对处理后$a_i$从小到大排序，$b_i$从大到小排序，然后对应相乘累加即可。</li>
+<li>注意：对$a_i$做预处理时不要取模。</li>
+<li>代码如下：</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">const</span> ll <span class="title">maxn</span><span class="params">(<span class="number">2e5</span>+<span class="number">5</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">const</span> ll <span class="title">mod</span><span class="params">(<span class="number">998244353</span>)</span></span>;</span><br><span class="line">ll n,a[maxn],b[maxn],ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios_base::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(ll i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">		a[i]=(a[i]*(<span class="number">1</span>+i)*(n-i));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(ll i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;b[i];</span><br><span class="line">	&#125;</span><br><span class="line">	sort(a,a+n,greater&lt;ll&gt;());</span><br><span class="line">	sort(b,b+n,less&lt;ll&gt;());</span><br><span class="line">	<span class="keyword">for</span>(ll i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		ans=(ans+a[i]%mod*b[i]%mod)%mod;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="F-Microtransactions"><a href="#F-Microtransactions" class="headerlink" title="F.Microtransactions"></a>F.Microtransactions</h2><h3 id="题意-5"><a href="#题意-5" class="headerlink" title="题意"></a>题意</h3><p>给定$n$种商品每种商品的需求量，还有一些商品在某些天会打折，打折的时候购买需要花费$1$元，否则要$2$元，每天会获得一块钱，请问至少需要多少天可以把需要的商品买完。</p>
+<h3 id="方法-5"><a href="#方法-5" class="headerlink" title="方法"></a>方法</h3><ul>
+<li>这题我本来是想要暴力模拟做的，但实在是想不到好的策略，只想到了越后面买越好，但就是不知道从后往前做，最后还是屈服了去看题解</li>
+<li>二分做法，假设总共需要$x$件商品，不管怎么样需要的天数一定处于$[x,2x]$之间，所以在这个区间内二分，判断$d(x\leq d\leq 2x)$天能不能买完需要的商品，从后往前遍历，<strong>需要注意的是，不要使用未来的钱，即某天没有花钱的时候，到前一天之前还是要减掉一块钱</strong>。</li>
+<li>代码如下：</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="function"><span class="keyword">const</span> ll <span class="title">maxn</span><span class="params">(<span class="number">2e5</span>+<span class="number">5</span>)</span></span>;</span><br><span class="line">ll order[maxn],n,m,ans,ordered[maxn],total,buy;</span><br><span class="line"><span class="built_in">vector</span>&lt;ll&gt; v[maxn&lt;&lt;<span class="number">1</span>];<span class="comment">//因为最后答案的最大值可以到total的两倍，所以要开两倍的空间，否则会RE</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(ll money)</span></span>&#123;</span><br><span class="line">	buy=<span class="number">0</span>;<span class="comment">//已买数量</span></span><br><span class="line">	ll left=<span class="number">0</span>;<span class="comment">//剩余的钱</span></span><br><span class="line">	<span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		ordered[i]=order[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(ll i=money;i&gt;<span class="number">0</span>;i--)&#123;<span class="comment">//从后往前遍历，贪心，越后面买越好</span></span><br><span class="line">		<span class="keyword">for</span>(ll j=<span class="number">0</span>;j&lt;v[i].size();j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(ordered[v[i][j]]&amp;&amp;money)&#123;</span><br><span class="line">				ll tmp=min(ordered[v[i][j]],money);</span><br><span class="line">				ordered[v[i][j]]-=tmp;</span><br><span class="line">				money-=tmp;</span><br><span class="line">				buy+=tmp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(money&gt;=i)&#123;<span class="comment">//当天赚的钱没有花掉</span></span><br><span class="line">			left++;<span class="comment">//加到剩余的钱里面，因为不能花未来赚到的钱</span></span><br><span class="line">			money--;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> left/<span class="number">2</span>&gt;=total-buy;<span class="comment">//剩余的钱能不能买到还没买的东西</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios_base::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	<span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;order[i];</span><br><span class="line">		total+=order[i];<span class="comment">//要买的总数</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(ll i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">		ll tmp_d,<span class="keyword">tmp_t</span>;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;tmp_d&gt;&gt;<span class="keyword">tmp_t</span>;</span><br><span class="line">		v[tmp_d].push_back(<span class="keyword">tmp_t</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	ll l=total,r=total*<span class="number">2</span>,mid;</span><br><span class="line">	<span class="keyword">while</span>(l&lt;=r)&#123;<span class="comment">//二分</span></span><br><span class="line">		mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(check(mid))&#123;</span><br><span class="line">			ans=mid;</span><br><span class="line">			r=mid<span class="number">-1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			l=mid+<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><code>return 0;</code></p>
+<hr>
+
+      
+      <blockquote>
+        
+        <strong>本文链接：</strong><br><a href="https://luojinrong.github.io/2019/05/23/Round-560-Div-3/">https://luojinrong.github.io/2019/05/23/Round-560-Div-3/</a>
+      </blockquote>
+    </div>
+    <footer class="mdui-card-actions">
+      
+        <a class="mdui-ripple article_categories-link" href="/categories/题解/">题解</a>
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/codeforces/">codeforces</a>
+      
+    </footer>
+    
+  </article>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+      <a rel="prev" class="extend prev" href="/2019/06/01/2019计蒜之道初赛第三场/">
+        <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
+        <span class="mdui-p-x-3" mdui-tooltip="{content: '2019计蒜之道初赛第三场'}">上一篇</span>
+      </a>
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2019/05/22/leetcode-3/">
+        <span class="mdui-p-x-3" mdui-tooltip="{content: 'leetcode#3'}">下一篇</span>
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+  <div id="comment" class="mdui-m-t-5">
+    
+  </div>
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2020 Luo Jinrong<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    <br>
+      <i class="iconfont">&#xe7fd;</i> <span id="busuanzi_value_site_pv"></span> &nbsp;&nbsp;
+      <i class="iconfont">&#xe601;</i> <span id="busuanzi_value_site_uv"></span>
+    
+  </div>
+</footer>
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+  <script src="/custom.js"></script>
+</body>
+</html>

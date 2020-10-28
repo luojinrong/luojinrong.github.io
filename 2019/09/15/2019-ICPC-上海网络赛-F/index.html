@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>2019-ICPC-上海网络赛-F | CS</title>
+
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <link rel="alternate" href="/atom.xml" title="CS">
+  <meta name="description" content="F. Rhyme scheme题意">
+<meta name="keywords" content="计蒜客,简单构造">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019-ICPC-上海网络赛-F">
+<meta property="og:url" content="https://luojinrong.github.io/2019/09/15/2019-ICPC-上海网络赛-F/index.html">
+<meta property="og:site_name" content="CS">
+<meta property="og:description" content="F. Rhyme scheme题意">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://luojinrong.github.io/2019/09/15/2019-ICPC-上海网络赛-F/D:/blog/source/_posts/2019-ICPC-上海网络赛-F/F.png">
+<meta property="og:updated_time" content="2020-10-26T13:00:32.486Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019-ICPC-上海网络赛-F">
+<meta name="twitter:description" content="F. Rhyme scheme题意">
+<meta name="twitter:image" content="https://luojinrong.github.io/2019/09/15/2019-ICPC-上海网络赛-F/D:/blog/source/_posts/2019-ICPC-上海网络赛-F/F.png">
+
+  <meta name="keywords" content=",计蒜客,简单构造">
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="CS">
+  <meta name="msapplication-starturl" content="https://luojinrong.github.io/2019/09/15/2019-ICPC-上海网络赛-F/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="CS">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.ico">
+
+  
+    <link rel="canonical" href="https://luojinrong.github.io/2019/09/15/2019-ICPC-上海网络赛-F/">
+  
+
+  
+  
+
+  
+  
+  
+
+  <link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/custom.css">
+</head>
+<body class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <script>var a=localStorage.getItem("mdui-drawer-close");if(!a){document.getElementsByTagName("body")[0].className+=" mdui-drawer-body-left"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">CS</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="请输入关键字"><input type="hidden" name="sitesearch" value="https://luojinrong.github.io"></form>
+    <div class="search-result"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <script>var a=localStorage.getItem("mdui-drawer-close");if(a){document.getElementById("sidebar").className+=" mdui-drawer-close"};</script>
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">Luo Jinrong</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>ljr的小bk</div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">主页</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">archive</i>
+        <div class="mdui-list-item-content">归档</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/10/">十月 2020<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="mdui-ripple sidebar_archives-count">15</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="mdui-ripple sidebar_archives-count">7</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="mdui-ripple sidebar_archives-count">6</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="mdui-ripple sidebar_archives-count">5</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">class</i>
+        <div class="mdui-list-item-content">分类</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/categories/STL使用/">STL使用<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/工具使用/">工具使用<span class="mdui-ripple sidebar_archives-count">6</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/算法/">算法<span class="mdui-ripple sidebar_archives-count">6</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/题解/">题解<span class="mdui-ripple sidebar_archives-count">29</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">标签</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/codeforce/">codeforce<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/codeforces/">codeforces<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/dp/">dp<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/hdu/">hdu<span class="mdui-ripple sidebar_archives-count">11</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/leetcode/">leetcode<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/markdown/">markdown<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/nowcode/">nowcode<span class="mdui-ripple sidebar_archives-count">10</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/图论/">图论<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/工具使用/">工具使用<span class="mdui-ripple sidebar_archives-count">4</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/推导/">推导<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/数论/">数论<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/模拟/">模拟<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/简单构造/">简单构造<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/计蒜客/">计蒜客<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/贪心/">贪心<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/趣学算法/">趣学算法<span class="mdui-ripple sidebar_archives-count">1</span></a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">关于</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+      <a href="/messageboard/" class="mdui-list-item mdui-ripple">留言板</a>
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">友情链接</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        
+          <a href="javascript:;" class="mdui-list-item mdui-p-l-2 mdui-text-color-theme mdui-ripple" style="justify-content: center;">链接为空</a>
+        
+      </div>
+    </div>
+  </div>
+</aside>
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/material-15.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">2019-ICPC-上海网络赛-F</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2019-09-15 / <i class="iconfont">&#xe601;</i> Luo Jinrong &nbsp;&nbsp; <span id="busuanzi_container_page_pv" style="display: none;"><i class="iconfont">&#xe7fd;</i> <span id="busuanzi_value_page_pv"></span></span></div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">发送到手机</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="http://qr.liantu.com/api.php?w=246&m=10&text=https://luojinrong.github.io/2019/09/15/2019-ICPC-上海网络赛-F/">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=2019-ICPC-上海网络赛-F&url=https://luojinrong.github.io/2019/09/15/2019-ICPC-上海网络赛-F/&pic=https://luojinrong.github.io/images/favicon.ico&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=2019-ICPC-上海网络赛-F&url=https://luojinrong.github.io/2019/09/15/2019-ICPC-上海网络赛-F/&via=Luo Jinrong" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://luojinrong.github.io/2019/09/15/2019-ICPC-上海网络赛-F/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=https://luojinrong.github.io/2019/09/15/2019-ICPC-上海网络赛-F/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://luojinrong.github.io/2019/09/15/2019-ICPC-上海网络赛-F/&title=2019-ICPC-上海网络赛-F" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=CS&title=2019-ICPC-上海网络赛-F&pics=https://luojinrong.github.io/images/favicon.ico&url=https://luojinrong.github.io/2019/09/15/2019-ICPC-上海网络赛-F/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=https://luojinrong.github.io/2019/09/15/2019-ICPC-上海网络赛-F/&text=2019-ICPC-上海网络赛-F" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <h2 id="F-Rhyme-scheme"><a href="#F-Rhyme-scheme" class="headerlink" title="F. Rhyme scheme"></a><a href="https://nanti.jisuanke.com/t/41414" target="_blank" rel="noopener">F. Rhyme scheme</a></h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><a id="more"></a>
+<p>一共有$n(1\leq n\leq 26)$行诗，这些诗句的韵脚（用$A$、$B$、$C$..表示）构成一个排列，这些排列的总数就是$bell$数$B_n$，把这些排列按字典序排序，求第$k$个。</p>
+<h3 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h3><p>构造。首先我们易得第一个一定是$A$，那么下一位就可以填$A$或者$B$（对于任意一位，当前位能填的字母为$A$-之前出现过的$ascii$最大的字母+1）。举个例子，我们假设$n=3$的时候所有排列如下所示：</p>
+<p><img src="/2019/09/15/2019-ICPC-上海网络赛-F/D:/blog\source\_posts\2019-ICPC-上海网络赛-F\F.png" alt=""></p>
+<p>图中蓝色标记即为当前位填指定字母时的排列总数。</p>
+<ul>
+<li>第$1$位一定填$A$（下一位只能填$A$或$B$）是没有问题的，这时总数为$B_n$。</li>
+<li>然后我们接下来考虑第$2$位的情况：<ul>
+<li>如果第二位填$A$（下一位只能填$A$或$B$），所以这个情况其实跟第一位考虑的情况是一样的，也就是这里的排列数量就是$n=2$时的排列总数，即$B_{n-1}$；<ul>
+<li>第三位填$A$就是$n=1$的情况，即$B_{n-2}$；</li>
+<li>第三位填$B$，因为只能填$A$或$B$，所以这时的情况数就是总的情况-第三位填$A$的情况，即$B_{n-1}-B_{n-2}$。</li>
+</ul>
+</li>
+<li>第二位填$B$（下一位可填$A$或$B$或$C$），因为只能填$A$或$B$，同上，情况数为$B_{n}-B_{n-1}$；<ul>
+<li>第三位填$A$或$B$（下一位可填$A$或$B$或$C$），所以这个情况跟考虑上一位是一样的，情况数分别为$B_{n-1}-B_{n-2}$；</li>
+<li>第三位填$C$，因为只能填$A$或$B$或$C$，所以这时的情况数就是总的情况-第三位填$A$或$B$的情况，即$(B_n-B_{n-1})-2(B_{n-1}-B_{n-2})=B_n-3B_{n-1}+2B_{n-2}$。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>也就是说我们每一位具体填某个字母时的方案数我们都可以根据公式得到，每填一位都会判断要求的第$K$个属于哪一块，每填一位都会分成类似上面的两个方向。然后我们就一位一位$dfs$搜索进行构造。因为公式会比较长，我做了一个预处理，将所有的$26$个公式中的系数存下来。</p>
+<h3 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FIN freopen(<span class="meta-string">"./F.in"</span>,<span class="meta-string">"r"</span>,stdin)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> __int128 ll;</span><br><span class="line"><span class="function"><span class="keyword">const</span> ll <span class="title">maxn</span><span class="params">(<span class="number">1e5</span>+<span class="number">5</span>)</span></span>;</span><br><span class="line">ll T,len,mat[<span class="number">30</span>][<span class="number">30</span>];</span><br><span class="line"><span class="built_in">string</span> ans;</span><br><span class="line">__int128 k;</span><br><span class="line">__int128 bell[]=&#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">15</span>,<span class="number">52</span>,<span class="number">203</span>,<span class="number">877</span>,<span class="number">4140</span>,<span class="number">21147</span>,<span class="number">115975</span>,<span class="number">678570</span>,<span class="number">4213597</span>,<span class="number">27644437</span>,<span class="number">190899322</span>,<span class="number">1382958545</span>,<span class="number">10480142147</span>,<span class="number">82864869804</span>,<span class="number">682076806159</span>,<span class="number">5832742205057</span>,<span class="number">51724158235372</span>,<span class="number">474869816156751</span>,<span class="number">4506715738447323</span>,<span class="number">44152005855084346</span>,<span class="number">445958869294805289</span>,<span class="number">4638590332229999353</span>,(__int128)(<span class="number">49631246523618756274</span>)&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">scan</span><span class="params">(__int128 &amp;x)</span><span class="comment">//输入</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">char</span> ch;</span><br><span class="line">    <span class="keyword">if</span>((ch = getchar()) == <span class="string">'-'</span>) f = -f;</span><br><span class="line">    <span class="keyword">else</span> x = x*<span class="number">10</span> + ch-<span class="string">'0'</span>;</span><br><span class="line">    <span class="keyword">while</span>((ch = getchar()) &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>)</span><br><span class="line">        x = x*<span class="number">10</span> + ch-<span class="string">'0'</span>;</span><br><span class="line">    x *= f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pre</span><span class="params">()</span></span>&#123;</span><br><span class="line">	mat[<span class="number">1</span>][<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">26</span>;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=i;j++)&#123;</span><br><span class="line">			mat[i][j]=mat[i<span class="number">-1</span>][j]-mat[i<span class="number">-1</span>][j<span class="number">-1</span>]*(i<span class="number">-1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(ll lf,ll n,ll can,ll k)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(lf==len)&#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(k==<span class="number">0</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(k==<span class="number">1</span>)&#123;</span><br><span class="line">		ans+=<span class="string">'A'</span>;</span><br><span class="line">		dfs(lf+<span class="number">1</span>,n<span class="number">-1</span>,can,k);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	ll all=<span class="number">0</span>,next=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=can;i++)&#123;</span><br><span class="line">		all+=mat[can][i]*bell[n+<span class="number">1</span>-i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=can+<span class="number">1</span>;i++)&#123;</span><br><span class="line">		next+=mat[can+<span class="number">1</span>][i]*bell[n+<span class="number">1</span>-i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(k&gt;all-next)&#123;</span><br><span class="line">		ans+=<span class="string">'A'</span>+can;</span><br><span class="line">		dfs(lf+<span class="number">1</span>,n,can+<span class="number">1</span>,k-(all-next));</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		ll base=(all-next)/can;</span><br><span class="line">		ans+=<span class="string">'A'</span>+(k<span class="number">-1</span>)/base;</span><br><span class="line">		dfs(lf+<span class="number">1</span>,n<span class="number">-1</span>,can,(k<span class="number">-1</span>)%base+<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> ONLINE_JUDGE</span></span><br><span class="line">	FIN;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">	ios_base::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">	pre();</span><br><span class="line">	scan(T);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> t=<span class="number">1</span>;t&lt;=T;t++)&#123;</span><br><span class="line">		scan(len),scan(k);</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">"Case #"</span>&lt;&lt;t&lt;&lt;<span class="string">": "</span>;</span><br><span class="line">		ans.clear();</span><br><span class="line">		ans+=<span class="string">'A'</span>;</span><br><span class="line">		<span class="keyword">if</span>(len&gt;<span class="number">1</span>)&#123;</span><br><span class="line">			dfs(<span class="number">1</span>,len,<span class="number">1</span>,k);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><code>return 0;</code></p>
+<hr>
+
+      
+      <blockquote>
+        
+        <strong>本文链接：</strong><br><a href="https://luojinrong.github.io/2019/09/15/2019-ICPC-上海网络赛-F/">https://luojinrong.github.io/2019/09/15/2019-ICPC-上海网络赛-F/</a>
+      </blockquote>
+    </div>
+    <footer class="mdui-card-actions">
+      
+        <a class="mdui-ripple article_categories-link" href="/categories/题解/">题解</a>
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/简单构造/">简单构造</a><a class="mdui-ripple article_tags-link" href="/tags/计蒜客/">计蒜客</a>
+      
+    </footer>
+    
+  </article>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+      <a rel="prev" class="extend prev" href="/2019/10/13/hdu-5943-二分匹配/">
+        <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
+        <span class="mdui-p-x-3" mdui-tooltip="{content: 'hdu 5943(二分匹配)'}">上一篇</span>
+      </a>
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2019/09/08/2019-ICPC-南昌网络赛-E/">
+        <span class="mdui-p-x-3" mdui-tooltip="{content: '2019-ICPC-南昌网络赛-E'}">下一篇</span>
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+  <div id="comment" class="mdui-m-t-5">
+    
+  </div>
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2020 Luo Jinrong<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    <br>
+      <i class="iconfont">&#xe7fd;</i> <span id="busuanzi_value_site_pv"></span> &nbsp;&nbsp;
+      <i class="iconfont">&#xe601;</i> <span id="busuanzi_value_site_uv"></span>
+    
+  </div>
+</footer>
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+  <script src="/custom.js"></script>
+</body>
+</html>

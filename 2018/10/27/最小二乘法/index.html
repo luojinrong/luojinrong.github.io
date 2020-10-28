@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>最小二乘法 | CS</title>
+
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <link rel="alternate" href="/atom.xml" title="CS">
+  <meta name="description" content="在数学建模课上新学习的算法，（虽然说之前学高数的时候学习过，但是好像没学会或者是忘了。这里就记一下自己关于最小二乘法的理解。">
+<meta name="keywords" content="数论">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最小二乘法">
+<meta property="og:url" content="https://luojinrong.github.io/2018/10/27/最小二乘法/index.html">
+<meta property="og:site_name" content="CS">
+<meta property="og:description" content="在数学建模课上新学习的算法，（虽然说之前学高数的时候学习过，但是好像没学会或者是忘了。这里就记一下自己关于最小二乘法的理解。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-10-26T13:00:32.518Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="最小二乘法">
+<meta name="twitter:description" content="在数学建模课上新学习的算法，（虽然说之前学高数的时候学习过，但是好像没学会或者是忘了。这里就记一下自己关于最小二乘法的理解。">
+
+  <meta name="keywords" content=",数论">
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="CS">
+  <meta name="msapplication-starturl" content="https://luojinrong.github.io/2018/10/27/最小二乘法/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="CS">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.ico">
+
+  
+    <link rel="canonical" href="https://luojinrong.github.io/2018/10/27/最小二乘法/">
+  
+
+  
+  
+
+  
+  
+  
+
+  <link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/custom.css">
+</head>
+<body class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <script>var a=localStorage.getItem("mdui-drawer-close");if(!a){document.getElementsByTagName("body")[0].className+=" mdui-drawer-body-left"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">CS</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="请输入关键字"><input type="hidden" name="sitesearch" value="https://luojinrong.github.io"></form>
+    <div class="search-result"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <script>var a=localStorage.getItem("mdui-drawer-close");if(a){document.getElementById("sidebar").className+=" mdui-drawer-close"};</script>
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">Luo Jinrong</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>ljr的小bk</div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">主页</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">archive</i>
+        <div class="mdui-list-item-content">归档</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/10/">十月 2020<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="mdui-ripple sidebar_archives-count">15</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="mdui-ripple sidebar_archives-count">7</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="mdui-ripple sidebar_archives-count">6</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="mdui-ripple sidebar_archives-count">5</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">class</i>
+        <div class="mdui-list-item-content">分类</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/categories/STL使用/">STL使用<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/工具使用/">工具使用<span class="mdui-ripple sidebar_archives-count">6</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/算法/">算法<span class="mdui-ripple sidebar_archives-count">6</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/题解/">题解<span class="mdui-ripple sidebar_archives-count">29</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">标签</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/codeforce/">codeforce<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/codeforces/">codeforces<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/dp/">dp<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/hdu/">hdu<span class="mdui-ripple sidebar_archives-count">11</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/leetcode/">leetcode<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/markdown/">markdown<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/nowcode/">nowcode<span class="mdui-ripple sidebar_archives-count">10</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/图论/">图论<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/工具使用/">工具使用<span class="mdui-ripple sidebar_archives-count">4</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/推导/">推导<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/数论/">数论<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/模拟/">模拟<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/简单构造/">简单构造<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/计蒜客/">计蒜客<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/贪心/">贪心<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/趣学算法/">趣学算法<span class="mdui-ripple sidebar_archives-count">1</span></a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">关于</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+      <a href="/messageboard/" class="mdui-list-item mdui-ripple">留言板</a>
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">友情链接</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        
+          <a href="javascript:;" class="mdui-list-item mdui-p-l-2 mdui-text-color-theme mdui-ripple" style="justify-content: center;">链接为空</a>
+        
+      </div>
+    </div>
+  </div>
+</aside>
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/material-14.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">最小二乘法</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2018-10-27 / <i class="iconfont">&#xe601;</i> Luo Jinrong &nbsp;&nbsp; <span id="busuanzi_container_page_pv" style="display: none;"><i class="iconfont">&#xe7fd;</i> <span id="busuanzi_value_page_pv"></span></span></div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">发送到手机</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="http://qr.liantu.com/api.php?w=246&m=10&text=https://luojinrong.github.io/2018/10/27/最小二乘法/">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=最小二乘法&url=https://luojinrong.github.io/2018/10/27/最小二乘法/&pic=https://luojinrong.github.io/images/favicon.ico&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=最小二乘法&url=https://luojinrong.github.io/2018/10/27/最小二乘法/&via=Luo Jinrong" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://luojinrong.github.io/2018/10/27/最小二乘法/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=https://luojinrong.github.io/2018/10/27/最小二乘法/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://luojinrong.github.io/2018/10/27/最小二乘法/&title=最小二乘法" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=CS&title=最小二乘法&pics=https://luojinrong.github.io/images/favicon.ico&url=https://luojinrong.github.io/2018/10/27/最小二乘法/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=https://luojinrong.github.io/2018/10/27/最小二乘法/&text=最小二乘法" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <p>在数学建模课上新学习的算法，（虽然说之前学高数的时候学习过，但是好像没学会或者是忘了。这里就记一下自己关于最小二乘法的理解。</p>
+<a id="more"></a>
+<hr>
+<h2 id="最小二乘法定义："><a href="#最小二乘法定义：" class="headerlink" title="最小二乘法定义："></a>最小二乘法定义：</h2><p>给定某种函数类型$y=f(x)$和m个数据点$(x_i,y_i)$的一个集合，极小化绝对偏差$|y_i-f(x_i)|$之平方和，即确定函数类型$y=f(x)$的参数从而极小化：<br>$$\sum_{i=1}^m |y_i-f(x_i)|^2$$</p>
+<hr>
+<h2 id="原始方法"><a href="#原始方法" class="headerlink" title="原始方法"></a>原始方法</h2><p>最小二乘法最原始的做法便是利用方程求解的思想，一个个求出拟合方程中的未知量。</p>
+<p>这里我就讲讲关于一次方程，也就是直线，通过原始方法拟合的步骤。</p>
+<hr>
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>首先假设我们有<code>m</code>组原始数据，记为($x_i,y_i)(1\leq i \leq m)$.</p>
+<p>同时我们假设拟合后的函数为$y=kx+b$.</p>
+<p>假设绝对偏差平方和为$S=\sum_{i=1}^m |y_i-f(x_i)|^2$.</p>
+<hr>
+<h3 id="极小化"><a href="#极小化" class="headerlink" title="极小化"></a>极小化</h3><p>接下来我们极小化绝对偏差$S$.</p>
+<p>我们对$S$分别求$k,b$的偏导，并使其为零：</p>
+<p>$$<br>\begin{cases}<br>\frac {\partial S}{\partial k}=2\sum_{i=1}^m (y_i-(kx_i+b))(-x_i)=0\\<br>\frac {\partial S}{\partial b}=2\sum_{i=1}^m (y_i-(kx_i+b))(-1)=0\\<br>\end{cases}<br>$$</p>
+<p>整理：</p>
+<p>$$<br>\begin{cases}<br>\sum_{i=1}^m kx_i^2+\sum_{i=1}^m bx_i=\sum_{i=1}^m x_iy_i\\<br>\sum_{i=1}^m kx_i+mb=\sum_{i=1}^m y_i\\<br>\end{cases}<br>$$</p>
+<hr>
+<h3 id="求解"><a href="#求解" class="headerlink" title="求解"></a>求解</h3><p>利用行列式求解方程组：</p>
+<p>$$<br>D=<br>\begin{vmatrix}<br>\sum_{i=1}^m x_i^2&amp;\sum_{i=1}^m x_i\\<br>\sum_{i=1}^m x_i&amp;m\\<br>\end{vmatrix}<br>$$</p>
+<p>$$<br>D_k=<br>\begin{vmatrix}<br>\sum_{i=1}^m x_iy_i&amp;\sum_{i=1}^m x_i\\<br>\sum_{i=1}^m y_i&amp;m\\<br>\end{vmatrix}<br>$$</p>
+<p>$$<br>D_b=<br>\begin{vmatrix}<br>\sum_{i=1}^m x_i^2&amp;\sum_{i=1}^m x_iy_i\\<br>\sum_{i=1}^m x_i&amp;\sum_{i=1}^m y_i\\<br>\end{vmatrix}<br>$$</p>
+<p>最后通过$k=\frac {D_k}{D},b=\frac {D_b}{D}$即可求出拟合后的方程中的参数。</p>
+<hr>
+<h3 id="推广"><a href="#推广" class="headerlink" title="推广"></a>推广</h3><p>更多次函数拟合用此方法求解较为复杂，但如果头铁（我最多做了个二次曲线的拟合，那已经很麻烦了，更蠢的是，我当时忘记了MATLAB中的det函数可以直接求解行列式，我自己手动展开输入算式，都是泪）硬要做也不是不可以，更方便的方法见下。</p>
+<hr>
+<h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><p>高次函数的拟合我们可以用矩阵更快的求出结果。</p>
+<hr>
+<h3 id="准备-1"><a href="#准备-1" class="headerlink" title="准备"></a>准备</h3><p>为了牛逼起见，这里我们直接上N次函数的拟合（有N+1个未知数）,还是m组$(x_i,y_i)(1\leq i\leq m)$。</p>
+<p>设参数矩阵：</p>
+<p>$$<br>A=<br>\begin{pmatrix}<br>a_1&amp;a_2&amp;a_3&amp;\cdots &amp;a_{N+1}\\<br>\end{pmatrix}<br>$$</p>
+<p>设自变量矩阵：</p>
+<p>$$<br>X=<br>\begin{pmatrix}<br>x_1^N&amp;x_2^N&amp;x_3^N&amp;\cdots&amp;x_m^N\\<br>x_1^{N-1}&amp;x_2^{N-1}&amp;x_3^{N-1}&amp;\cdots&amp;x_m^{N-1}\\<br>\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\<br>x_1&amp;x_2&amp;x_3&amp;\cdots&amp;x_m\\<br>1&amp;1&amp;1&amp;\cdots&amp;1\\<br>\end{pmatrix}<br>$$</p>
+<p>设因变量矩阵：</p>
+<p>$$<br>Y=<br>\begin{pmatrix}<br>y_1&amp;y_2&amp;y_3&amp;\cdots&amp;y_m\\<br>\end{pmatrix}<br>$$</p>
+<hr>
+<h3 id="求解-1"><a href="#求解-1" class="headerlink" title="求解"></a>求解</h3><p>于是我们得到方程$AX=Y$。求解步骤如下：</p>
+<p>$$<br>AX=Y<br>$$<br>两边右乘X的转置<br>$$<br>AXX^T=YX^T<br>$$<br>两边右乘XX^T的逆<br>$$<br>AXX^T(XX^T)^{-1}=YX^T(XX^T)^{-1}<br>$$<br>解得<br>$$<br>A=YX^T(XX^T)^{-1}\\<br>$$</p>
+<p>注：不能直接两边右乘$X$的逆，因为$X$可能不存在逆矩阵，而$XX^T$的逆一定存在。</p>
+<hr>
+<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><p>如果要求多项式某几项为零时，则自变量矩阵不加入相对于次数的行，而参数矩阵去掉相应的参数即可。</p>
+<p>例如，如果一个N次函数拟合时要求没有一次项，那么：</p>
+<p>参数矩阵：</p>
+<p>$$<br>A=<br>\begin{pmatrix}<br>a_1&amp;a_2&amp;a_3&amp;\cdots &amp;a_{N-1}&amp;a_{N+1}\\<br>\end{pmatrix}<br>$$</p>
+<p>自变量矩阵：</p>
+<p>$$<br>X=<br>\begin{pmatrix}<br>x_1^N&amp;x_2^N&amp;x_3^N&amp;\cdots&amp;x_m^N\\<br>x_1^{N-1}&amp;x_2^{N-1}&amp;x_3^{N-1}&amp;\cdots&amp;x_m^{N-1}\\<br>\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\<br>x_1^2&amp;x_2^2&amp;x_3^2&amp;\cdots&amp;x_m^2\\<br>1&amp;1&amp;1&amp;\cdots&amp;1\\<br>\end{pmatrix}<br>$$</p>
+<p>因变量矩阵$Y$不变。</p>
+<p>然后按照上述公式求解即可。</p>
+<hr>
+<p><code>return 0;</code></p>
+<hr>
+
+      
+      <blockquote>
+        
+        <strong>本文链接：</strong><br><a href="https://luojinrong.github.io/2018/10/27/最小二乘法/">https://luojinrong.github.io/2018/10/27/最小二乘法/</a>
+      </blockquote>
+    </div>
+    <footer class="mdui-card-actions">
+      
+        <a class="mdui-ripple article_categories-link" href="/categories/算法/">算法</a>
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/数论/">数论</a>
+      
+    </footer>
+    
+  </article>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+      <a rel="prev" class="extend prev" href="/2018/11/16/C-优先队列stl/">
+        <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
+        <span class="mdui-p-x-3" mdui-tooltip="{content: 'C++优先队列stl'}">上一篇</span>
+      </a>
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2018/10/24/markdown-MathJax/">
+        <span class="mdui-p-x-3" mdui-tooltip="{content: 'markdown+MathJax'}">下一篇</span>
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+  <div id="comment" class="mdui-m-t-5">
+    
+  </div>
+
+
+
+  <div style="position: fixed !important; right: 16px; top: 30%;">
+    <button class="mdui-fab mdui-fab-mini mdui-ripple" mdui-menu="{target: '#toc'}"><i class="mdui-icon material-icons">toc</i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item" disabled><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#最小二乘法定义："><span class="toc-text">最小二乘法定义：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原始方法"><span class="toc-text">原始方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备"><span class="toc-text">准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#极小化"><span class="toc-text">极小化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#求解"><span class="toc-text">求解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#推广"><span class="toc-text">推广</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#矩阵"><span class="toc-text">矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备-1"><span class="toc-text">准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#求解-1"><span class="toc-text">求解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拓展"><span class="toc-text">拓展</span></a></li></ol></li></ol></li>
+    </ul>
+  </div>
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2020 Luo Jinrong<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    <br>
+      <i class="iconfont">&#xe7fd;</i> <span id="busuanzi_value_site_pv"></span> &nbsp;&nbsp;
+      <i class="iconfont">&#xe601;</i> <span id="busuanzi_value_site_uv"></span>
+    
+  </div>
+</footer>
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+  <script src="/custom.js"></script>
+</body>
+</html>
