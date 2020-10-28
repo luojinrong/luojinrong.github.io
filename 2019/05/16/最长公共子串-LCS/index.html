@@ -284,7 +284,7 @@
     repo: 'comment',
     owner: 'luojinrong',
     admin: ['luojinrong'],
-    id: '' || location.pathname,
+    id: md5(location.pathname),
     distractionFreeMode: false
   });
   gitalk.render('gitalk-container');
